@@ -168,7 +168,7 @@ div.relative {
   text-align: right;
 }
 #cta_unity {
-  margin-right: 10%;
+  margin-right: 20%;
   float: right;
   width: 270px;
   display: flex;
@@ -445,6 +445,7 @@ table td:first-child {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
 }
 #footer p,
 #footer a {
@@ -528,4 +529,13 @@ ul li::before {
   display: inline-block;
   width: 1em;
   margin-left: -1em;
+}
+
+.img_prez {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 24px;
+  column-gap: 24px;
 }
