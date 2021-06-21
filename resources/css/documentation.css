@@ -1,57 +1,60 @@
 :root {
   --primary-color: #191f3b;
-  --primary-color-light: #8e7474;
-  --accent-color: #fe6a6b;
-  --accent-color-light: #ffe4e4;
-  --accent-color-dark: #b94b4c;
+  --secondary-color: #36bad1;
+  --contrast-color: #ee750b;
   --white-color: #fafbfc;
 }
-.wrapper {
+
+html {
+  scroll-padding-top: 2000px;
+}
+
+#main_content {
   display: flex;
-  flex-grow: 1;
-  width: 95%;
-}
-.menu {
-  grid-template-columns: 1fr 180px 60% 1fr;
-}
-.menu_item {
-  padding: 1.5rem 1rem;
-}
-.background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 28%;
-  background-color: var(--white-color);
-  z-index: -1;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 .nav {
-  flex-basis: 20%;
-  font-weight: 150;
-  padding-left: 4%;
+  max-width: 250px;
+  height: 100%;
+  margin-top: 24px;
+  padding-right: 80px;
+  position: fixed;
+  left: 20%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  padding-bottom: 260px;
+  scroll-padding-top: 200px;
+}
+.nav-2::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+.nav::-webkit-scrollbar {
+  width: 8px;
+}
+.nav::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: transparent;
+  border: 1px solid var(--secondary-color);
 }
 .nav ul {
   list-style: none;
   padding-left: 0;
   line-height: 1.5;
 }
-.nav ul.fixed {
-  position: fixed;
-  top: 2rem;
-}
+
 .nav ol {
   list-style: none;
   padding-left: 20px;
   line-height: 1.2;
 }
 .nav li:hover {
-  color: var(--primary-color-light);
+  color: var(--contrast-color);
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
 .nav .selected {
-  color: var(--accent-color);
+  color: var(--contrast-color);
   position: relative;
 }
 .nav .selected:after {
@@ -59,13 +62,16 @@
   content: "";
   width: 1rem;
   height: 1rem;
-  background-color: var(--accent-color);
+  background-color: var(--contrast-color);
   left: -1.5rem;
   top: 0.3rem;
 }
 .content {
-  flex-basis: 80%;
-  padding: 0 0 5rem 1rem;
+  max-width: 70%;
+}
+.content img {
+  max-width: 550px;
+  border: 2px solid var(--secondary-color);
 }
 @media (max-width: 750px) {
   .wrapper {

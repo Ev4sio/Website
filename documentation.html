@@ -29,476 +29,474 @@
           </ul>
         </div>
       </div>
-<br/>
-<div class="wrapper">
-    <div class="background"></div>    
-    <aside class="nav">
-        <ul>
-            <li class="js_button selected">Get Started</li>
-            <ol>
-                <li class="js_button">Ev4sio Window</li>
-            </ol>
-            <li class="js_button">PxManager Singleton</li>
-            <li class="js_button">Default Assets</li>
-            <ol>
-                <li class="js_button">PxDefaultAllocator</li>
-                <li class="js_button">PxDefaultCpuDispatcher</li>
-                <li class="js_button">PxDefaultMaterial</li>
-                <li class="js_button">PxDefaultScene</li>
-            </ol>
-            <li class="js_button">Scene Manager</li>
-            <li class="js_button">Rigid Actors</li>
-            <ol>
-                <li class="js_button">PxRigidStatic</li>
-                <li class="js_button">PxRigidDynamic</li>
-                <li class="js_button">PxArticulationLink</li>
-            </ol>
-            <li class="js_button">Shape and Geometries</li>
-            <li class="js_button">Joints</li>
-            <li class="js_button">Custom Joints</li>
-            <li class="js_button">Aggregates</li>
-            <li class="js_button">Articulations</li>
-            <ol>
-                <li class="js_button">Maximal Coordinate Articulations</li>
-                <li class="js_button">Reduced Coordinate Articulation</li>
-            </ol>
-            <li class="js_button">Character Controllers</li>
-            <li class="js_button">Advanced Collision Detection</li>
-            <ol>
-                <li class="js_button">Tuning Shape Collision Behavior</li>
-                <li class="js_button">Contact Modification</li>
-                <li class="js_button">Contact Reporting</li>
-                <li class="js_button">Extracting Contact information</li>
-                <li class="js_button">Continuous Collision Detection</li>
-                <li class="js_button">Raycast CCD</li>
-                <li class="js_button">Speculative CCD</li>
-                <li class="js_button">Persistent Contact Manifold (PCM)</li>
-            </ol>
-            <li class="js_button">Vehicles</li>
-        </ul>
-    </aside>
-    <article class="content">
-        <section class="js_section">
-            <h3 class="section_title">Get Started</h3>
-            <p>The diagram below describes the part of the package that concerns <i>PhysX</i>.</p>
-            <img src="resources/images/documentation/Ev4sio & PhysX.png" alt="Ev4sio & PhysX"/>
-            <p>The native plugin is located here: <i>Ev4sio/Assets/Plugins</i>. It makes C++/C# interoperability possible.</p>
-            <p>The <i>Ev4sio.Core</i> module is composed of two layers:</p>
-            <div class="relative">
-                <ul class="a">
-                    <li>
-                        <p><i>Ev4sio.PhysX.Native</i> is the low level layer. It is independent of the upper layers and allows connection with the native plugin. The elements that compose it can be used directly but it is very risky since the slightest error of instantiation/destruction of native elements can result in a crash of <i>Unity</i>.</p>
-                    </li>
-                    <li>
-                        <p>The <i>Ev4sio.PhysX.Assets</i> layer is there to facilitate the use of the low level features. This is where we can find the <i>PxManager</i> singleton that we will talk about next. The objective here is to reproduce the global structure of the <i>PhysX SDK</i> and to automatically manage the initialization and the instantiation / destruction of the different elements of the simulation.</p>
-                    </li>
+    <div id="main_content">
+            <aside class="nav">
+                <ul>
+                    <li class="js_button selected">Get Started</li>
+                    <ol>
+                        <li class="js_button">Ev4sio Window</li>
+                    </ol>
+                    <li class="js_button">PxManager Singleton</li>
+                    <li class="js_button">Default Assets</li>
+                    <ol>
+                        <li class="js_button">PxDefaultAllocator</li>
+                        <li class="js_button">PxDefaultCpuDispatcher</li>
+                        <li class="js_button">PxDefaultMaterial</li>
+                        <li class="js_button">PxDefaultScene</li>
+                    </ol>
+                    <li class="js_button">Scene Manager</li>
+                    <li class="js_button">Rigid Actors</li>
+                    <ol>
+                        <li class="js_button">PxRigidStatic</li>
+                        <li class="js_button">PxRigidDynamic</li>
+                        <li class="js_button">PxArticulationLink</li>
+                    </ol>
+                    <li class="js_button">Shape and Geometries</li>
+                    <li class="js_button">Joints</li>
+                    <li class="js_button">Custom Joints</li>
+                    <li class="js_button">Aggregates</li>
+                    <li class="js_button">Articulations</li>
+                    <ol>
+                        <li class="js_button">Maximal Coordinate Articulations</li>
+                        <li class="js_button">Reduced Coordinate Articulation</li>
+                    </ol>
+                    <li class="js_button">Character Controllers</li>
+                    <li class="js_button">Advanced Collision Detection</li>
+                    <ol>
+                        <li class="js_button">Tuning Shape Collision Behavior</li>
+                        <li class="js_button">Contact Modification</li>
+                        <li class="js_button">Contact Reporting</li>
+                        <li class="js_button">Extracting Contact information</li>
+                        <li class="js_button">Continuous Collision Detection</li>
+                        <li class="js_button">Raycast CCD</li>
+                        <li class="js_button">Speculative CCD</li>
+                        <li class="js_button">Persistent Contact Manifold (PCM)</li>
+                    </ol>
+                    <li class="js_button">Vehicles</li>
                 </ul>
-            </div>
-            <p>The <i>Ev4sio.Physics</i> module provides higher level features as well as usage examples.</p>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">Ev4sio Window</h4>
-            <p>When opening <i>Unity</i> for the first time after the installation of the package, the <i>Ev4sio</i> window appears automatically.</p>
-            <img src="resources/images/documentation/Ev4sio Window.png"/>
-            <p>It is possible to prevent it from reopening on subsequent starts by using the option at the bottom. You can also open this window using the menu <i>Window/Ev4sio</i>.</p>
-        </section>
-        <section class="js_section">
-            <h3 class="section_title">PxManager Singleton</h3>
-            <p>When <i>Unity</i> is opened for the first time with the package, various assets essential for the tool are also automatically created. They are stored in the <i>Resources</i> directory.</p>
-            <img src="resources/images/documentation/Project - Composition PxAssets.png"/>
-            <p>One of these elements is a singleton named <i>PxManager</i>.</p>
-            <p>This singleton is of type <i>SingletonScriptableObject</i> and is saved in the Singletons directory. All singletons of this type are located in this directory.</p>
-            <p><i>PxManager</i> is essential when using this plugin. It gives access to some settings and to the various <i>PhysX</i> components of the different scenes.</p>
-            <p>Here are its settings as they appear in the <i>Inspector</i>.</p>
-            <img src="resources/images/documentation/Inspector - PxManager.png"/>
-            <p>We can see the references to default assets that were also created automatically and added to the <i>PxAssets</i> directory.</p>
-            <img src="resources/images/documentation/Project - PxAssets.png"/>
-            <p>These different components can be adjusted or even replaced if necessary. As their names indicate, they will be used by default by the other components.</p>
-            <p><i>PhysX</i> is designed to produce correct results regardless of the units of length or mass, so long as inputs use those units consistently. However, there are certain tolerances values whose defaults need to be adjusted depending on the units. In order to ensure that these tolerances default to reasonable values, adjust the parameters <b><i>ScaleLength</b></i> and <b><i>ScaleSpeed</b></i>. You should set them based on the typical size of objects in your simulation. For example, if you are working with objects of size approximately one meter, but in units of centimeters, you should set the scale values as follows:</p>
-            <img src="resources/images/documentation/Inspector - PxManager - TolerancesScale.png"/>
-            <p>It is important to use consistent scale values everywhere in your application.</p>
-            <p>Use the <b><i>Minimal Additional Components</b></i> parameter to avoid linking the code of some <i>PhysX</i> features that are not always used in order to save memory. Currently the optional features are the articulations and the height fields. By default this flag is disabled and you can use these features.</p>
-            <p>The <b><i>Use Vehicle Library</b></i> checkbox allows the use of the vehicle module. This module is described in the <i>Vehicles</i> section. By default the flag is disabled so you cannot use vehicles.</p>
-            <p>With the <b><i>Use Visual Debugger</b></i> checkbox you can visualize, debug and profile your simulation using the <i>PhysX Visual Debugger</i>. But for that you must first have installed and launched the application:
-            <a href="https://developer.nvidia.com/physx-visual-debugger">https://developer.nvidia.com/physx-visual-debugger</a></p>
-            <img src="resources/images/documentation/Inspector - PxManager - Visual Debugger.png"/>
-            <p>This tool provides a graphical view of the <i>PhysX</i> scene and includes various tools to inspect and visualize variables of every <i>PhysX</i> object. Additionally it can also record and visualize memory and timing data. You can refer to its detailed built-in help for more information on the usage of the GUI.</p>
-            <p>For the display to match that of <i>Unity</i>, you need to set the <i>Chirality</i> parameter to <i>Left-Handed</i>.</p>
-            <br/>
-            <p>All these settings can be found in the <i>Ev4sio</i> window, by clicking on <i>PhysX 4.1.2 Manager</i>.</p>
-            <img src="resources/images/documentation/Ev4sio Window - PxManager Settings.png"/>
-        </section>
-        <section class="js_section">
-            <h3 class="section_title">Default Assets</h3>
-            <p>All the default assets are of type <i>ScriptableObject</i>. They are data containers. Once set, this type of asset can be used by multiple components at once.</p>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">PxDefaultAllocator</h4>
-            <p>This is the default implementation of the allocator interface required by the PhysX SDK. </p>
-            <img src="resources/images/documentation/Inspector - PxDefaultAllocator.png"/>
-            <p><b><i>AreComponentsInstantiated</b></i> indicates if the components which are necessary for this asset have been instantiated. You will see this flag on all the elements that depend on other associated components, such as for example native instances of the <i>PhysX</i> API, which are accessible through <i>handles</i>.</p>
-            <p><b><i>DisplayDataAllocationInfo</b></i> allows you to display information about the allocations made in <i>PhysX</i>.</p>
-        </section>        
-        <section class="js_section">
-            <h4 class="section_title">PxDefaultCpuDispatcher</h4>
-            <p>This is a default implementation for a CPU task dispatcher.</p>
-            <img src="resources/images/documentation/Inspector - PxDefaultCpuDispatcher.png"/>
-            <p><i>PhysicalCoreCount</i> indicates the number of physical cores available. You can set the number of CPU used by the simulation via the <b><i>Thread Count</b></i> setting.</p>
-        </section>        
-        <section class="js_section">
-            <h4 class="section_title">PxDefaultMaterial</h4>
-            <p>This is a physics material of type <i>PxMaterial</i> that will be used by all objects if you do not apply a specific one to them.</p>
-            <img src="resources/images/documentation/Inspector - PxDefaultMaterial.png"/>
-            <p>You can create other <i>PxMaterial</i> assets using the menu <i>Assets/Create/Ev4sio/Core/PxMaterial</i>.</p>
-        </section>        
-        <section class="js_section">
-            <h4 class="section_title">PxDefaultScene</h4>
-            <p>This is a <i>PxScene</i> and the central asset to perform the simulation.</p>
-            <p>A <i>PxScene</i> contains a collection of bodies and constraints which can interact. It simulates the behavior of objects over time. Several scenes may exist at the same time, but each body or constraint is specific to a scene. They may not be shared.</p>
-            <p>Here is the list of its settings as they appear in the Inspector.</p>
-            <img src="resources/images/documentation/Inspector - PxDefaultScene 1.png"/>
-            <p><b><i>Frequency</b></i> is used to adjust the simulation frequency of the scene. If its value is zero, the simulation frequency corresponds to the <i>FixedUpdate</i> frequency. Be careful to use a reasonable value (between 60 and 100Hz) in order not to impact performance.</p>
-            <p>The <b><i>Gravity</b></i> value will be applied to all objects in the scene.</p>
-            <p>Then there is a set of callbacks, most of which are optional. They are all of type <i>ScriptableObject</i>. We can see three default callbacks.</p>
-            <img src="resources/images/documentation/Inspector - PxDefaultScene 2.png"/>
-            <p>The documentation will try to detail these different settings but you can also refer to the official documentation provided by <i>NVidia</i>.</p>
-            <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/API.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/API.html</a></p>
-        </section>        
-        <section class="js_section">
-            <h3 class="section_title">Scene Manager</h3>
-            <p>The second part of the <i>Ev4sio</i> window concerns the management of the current scene.</p>
-            <p>To simulate the tool components you have to create a <i>SingletonMonoBehaviour</i> in your scene. To do this, click on the <i>CreateSceneSingleton</i> button.</p>
-            <img src="resources/images/documentation/Ev4sio Window - SceneManager - Create Scene Singleton.png"/>
-            <p/>
-            <img src="resources/images/documentation/Hierarchy - Scene Singleton.png"/>
-            <p>Unlike <i>PxManager</i>, this singleton is a <i>MonoBehaviour</i>. It allows the updating of the different components which will be described later. Indeed, no other component of this tool uses the classic <i>Update</i> and <i>FixedUpdate</i> methods of a <i>MonoBehaviour</i> and they need this singleton to be updated. The objective is to have a better control of the life-cycles.</p>
-            </br>
-            <p>At this time, the tool has been initialized and the scene is ready for the simulation. We are now going to detail the different components that you can put in your scene.</p>
-        </section>
-        <section class="js_section">
-            <h3 class="section_title">Rigid Actors</h3>
-            <p>The rigid actors are the elements that are associated with shapes allowing them to collide with their environment.</p>
-            <img src="resources/images/documentation/PxActor.png"/>
-            <p>You can easily see the correspondence with the original architecture:</p>
-            <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/RigidBodyOverview.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/RigidBodyOverview.html</a></p>             
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">PxRigidStatic</h4>
-            <p>Here is the user-friendly method to add an infinite static plane to our scene.</p>
-            <p>After selecting the scene, right click and use the menu <i>GameObject/Ev4sio/Create ‘PxRigidStatic’ Object Or Aggregate/Using ‘PxPlaneGeometry’</i></p>
-            <img src="resources/images/documentation/Hierarchy - PxRigidStatic and PxPlaneGeometry.png"/>
-            <p>It creates a game object with a <i>PxRigidStatic</i> component and its associated <i>PxPlaneGeometry</i> (of type <i>PxShape</i>).</p>
-            <img src="resources/images/documentation/Inspector - PxRigidStatic.png"/>
-            <p><i>Note: gizmos of the different shapes are displayed in red color.</i></p>
-            <p>See the <i>Shape and Geometries</i> section for more details on a <i>PxShape</i>.</p>
-            <p>Here is another example of a static object creation using a height field.</p>
-            <img src="resources/images/documentation/Hierarchy - PxRigidStatic and PxHeightFieldGeometry.png"/>
-            </p>
-            <img src="resources/images/documentation/Inspector - PxRigidStatic and PxHeightFieldGeometry.png"/>
-            </p>
-            <img src="resources/images/documentation/Scene - HeightField.png"/>
-            <p><i>Note: it is possible to achieve the same result by creating each component manually and associating them with each other.</i></p>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">PxRigidDynamic</h4>
-            <p>In the same way we can easily add a dynamic component and a shape to an existing game object, provided it has a mesh filter component.</p>
-            <img src="resources/images/documentation/Hierarchy - PxRigidDynamic and PxBoxGeometry.png"/>
-            </p>
-            <img src="resources/images/documentation/Inspector - PxRigidDynamic and PxBoxGeometry.png"/>
-            <p>If we had used the option <i>With 'PxConvexMeshGeometry’</i>:</p>
-            <img src="resources/images/documentation/Inspector - PxRigidDynamic and PxConvexMeshGeometry.png"/>
-            <p>A <i>PxActor</i> component is a <i>MonoBehaviour</i>. You can also add it manually to a game object using the <i>Component</i> menu <i>Ev4sio/Core/PxActor/…</i> In this case your actor has no shape and cannot be simulated. You must associate at least one shape with it.</p>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">PxArticulationLink</h4>
-            <p>This type of rigid body concerns the articulations. It will be discussed later.</p>
-        </section>
-        <section class="js_section">
-            <h3 class="section_title">Shape and Geometries</h3>
-            <p>A <i>PxShape</i> is also a <i>MonoBehaviour</i>. Unlike the architecture of <i>PhysX</i>, the different geometries derive from it. In <i>PhysX</i>, shapes and geometries are implemented in separate classes but they have been grouped in the plugin to facilitate their edition.</p>
-            <img src="resources/images/documentation/PxShape & PxGeometry.png"/>
-            <p>There are two categories of shapes.</p>
-            <p>The primitives (<i>PxBoxGeometry, PxCapsuleGeometry, PxPlaneGeometry</i> and <i>PxSphereGeometry</i>) which contain all of the data.</p>
-            <p>The meshes or height fields (<i>PxConvexMeshGeometry, PxTriangleMeshGeometry</i> and <i>PxHeightFieldGeometry</i>) for whom the data is contained in a much larger object (<i>PxConvexMesh, PxTriangleMesh</i> and <i>PxHeightField</i> respectively). You can use these objects with different scales in each <i>PxShape</i> type which references them.</p>
-            <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Geometry.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Geometry.html</a></p>
-            <p>Once again, there is a simple way to create a shape and automatically associate it with an actor. For this you have to right click on a game object already containing an actor component.</p>
-            <img src="resources/images/documentation/Hierarchy - Add PxShape.png"/>
-            </p>
-            <img src="resources/images/documentation/Inspector - PxRigidDynamic - Multi shapes.png"/>
-            <p>Once you have created the shapes of a rigid actor, you can edit them.</p>
-            <img src="resources/images/documentation/Inspector - Edit Shape.png"/>
-            <p>Or you can restore their original settings.</p>
-            <img src="resources/images/documentation/Inspector - Restore Shape.png"/>
-            <p>You can also edit the position of the center of gravity, represented by a green cube.</p>
-            <img src="resources/images/documentation/Inspector - Edit Center Of Mass Local Pose.png"/>
-        </section>
-        <section class="js_section">
-            <h3 class="section_title">Joints</h3>
-            <p>Now that we are able to add dynamic objects to our scene, we can also create mechanical joints to add movement constraints.</p>
-            <img src="resources/images/documentation/Hierarchy - Create PxJoint.png"/>
-            </p>
-            <img src="resources/images/documentation/Hierarchy - PxSphericalJoint.png"/>
-            <p>One of the selected game objects must contain a moveable actor. If only one game object containing an actor is selected, the joint is created between this actor and the static world. If two actors are selected then they will be constrained together by the joint.</p>
-            <img src="resources/images/documentation/Inspector - PxSphericalJoint.png"/>
-            <p>A joint constrains the way two actors move relative to one another. In the case of a revolute joint, it constrains the origin points of the two frames to be coincident and their x-axes to coincide, but allows the two actors to rotate freely relative to one another around this common axis. A typical use for a joint would be to model a door hinge or the shoulder of a character.</p>
-            <p>PhysX supports six different joint types:
-            <div class="relative">                
-                <ul class="a">
-                    <li><p>A fixed joint locks the orientations and origins rigidly together</p></li>
-                    <li><p>A distance joint keeps the origins within a certain distance range</p>
-                    <li><p>A spherical joint (also called a <i>ball-and-socket</i>) keeps the origins together, but allows the orientations to vary freely.</p>
-                    <li><p>A revolute joint (also called a <i>hinge</i>) keeps the origins and x-axes of the frames together, and allows free rotation around this common axis.</p>
-                    <li><p>A prismatic joint (also called a <i>slider</i>) keeps the orientations identical, but allows the origin of each frame to slide freely along the common x-axis.</p>
-                    <li><p>A D6 joint is a highly configurable joint that allows specification of individual degrees of freedom either to move freely or be locked together. It can be used to implement a wide variety of mechanical and anatomical joints, but is somewhat less intuitive to configure than the other joint types.</p>
-                </ul>
-            </div>                
-            <p>The official documentation provides much more detailed information on each type of joint.</p>
-            <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Joints.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Joints.html</a></p>
-            <p>The string-damper joint available in the sources of <i>Ev4sio.Physics</i> gives an example of implementation with the combination of two joints, and shows how the Assets and Native layers work together.</p>
-        </section>
-        <section class="js_section">
-            <h3 class="section_title">Custom Joints</h3>
-            <p>Joints cover many common scenarios, but if you have use cases that are not met by the conventional joints, you can implement your own.</p>
-            <p>It is possible using the <i>PxCustomJoint</i> class. As an example you can find the <i>PxPulleyJoint</i> class in <i>Ev4sio.Physics</i>, which is a rewrite of a snippet provided as an example in the <i>PhysX</i> library. This is an advanced topic, and assumes familiarity with the mathematics underlying rigid body simulation.</p>
-        </section>
-        <section class="js_section">
-            <h3 class="section_title">Aggregates</h3>
-            <p>An aggregate is a collection of actors. Aggregates do not provide extra simulation or query features, but allow you to specify that a set of actors will be clustered together, which in turn allows the <i>SDK</i> to optimize its spatial data operations. A typical use case is a ragdoll, made of multiple different actors. Without aggregates, this gives rise to as many broad-phase entries as there are shapes in the ragdoll. It is typically more efficient to represent the ragdoll in the broad-phase as a single entity, and perform internal overlap tests in a second pass if necessary. Another potential use case is a single actor with a large number of attached shapes.</p>
-            <p>So aggregates are used to lighten the load on broad phases. When running broad phase on the CPU, aggregates frequently improve performance by reducing the load on the core broad phase algorithm. However, it should be noted that there is some cost when aggregates overlap because these overlaps must be processed by a separate module.</p>
-            <p>If you add a component of type <i>PxAggregate</i> to a game object, all you have to do is press the button <i>TryFillFromHierarchy</i> to add all the actors that are in this game object and its children.</p>
-            <img src="resources/images/documentation/Inspector - PxAggregate.png"/>
-            <p>The maximum number of actors is currently limited to 128, and for efficiency should be set as low as possible.</p>
-            <p>If you will never need collisions between the actors of the aggregate, disable them at creation time using the <i>Enable Self Collision</i> checkbox. This is much more efficient than using the scene filtering mechanism, as it bypasses all internal filtering logic. A typical use case would be an aggregate of static or kinematic actors.</p>
-            <p>Note that both the maximum number of actors and the self-collision attribute are immutable.</p>
-            <p>We will now see a very simple method to create easily a set of actors placed in the same aggregate and eventually connected by joints.</p>
-            <p>As an example we will use the <i>GravityGun</i> prefab that you can find in the <i>Prefabs</i> directory.</p>
-            <img src="resources/images/documentation/Hierarchy - GravityGun prefab.png"/>
-            <p>This prefab is made up of a number of game objects prefixed by <i>J_</i> or <i>A_</i>.</p>
-            <p>Each game object prefixed with <i>A_</i> contains a mesh, via a component of type <i>mesh filter</i>, and its associated <i>mesh renderer</i>. It indicates the presence of an actor, and the mesh is used to define its shape.</p>
-            <p>Each game object prefixed with <i>J_</i> has a name which starts with the name of a joint. It designates the location and orientation of a joint of this type. And the last two sections of that name each indicate which actor is connected to the other.</p>
-            <p>It is essential to respect this nomenclature so that the following feature can work correctly.</p>
-            <p>Select the root of the prefab hierarchy, right click, and choose the option <i>Create ‘PxRigidDynamic’ Object Or Aggregate</i> option. In this example we will generate box geometries.</p>
-            <img src="resources/images/documentation/Hierarchy - Create PxAggregate with PxBoxGeometry.png"/>
-            <p>This action creates another hierarchy of game objects containing <i>PxRigidDynamic</i> and <i>PxJoint</i> components. Each mesh used to generate <i>PxShape</i> components is duplicated to avoid corrupting the prefab.</p>
-            <img src="resources/images/documentation/Hierarchy - PxGravityGun with PxBoxGeometry.png"/>
-            </p>
-            <img src="resources/images/documentation/Inspector - PxGravityGun - PxAggregate.png"/>
-            <p>We note the automatic creation of an aggregate containing all the actors of the hierarchy, with the collisions disabled between these different actors.</p>
-            <p>If there had been only one actor in the hierarchy, the aggregate would not have been created.</p>
-            <p>If we had used the option <i>With 'PxCapsuleGeometry’</i></p>
-            <img src="resources/images/documentation/Hierarchy - PxGravityGun with PxCapsuleGeometry.png"/>
-            <p>Or <i>With 'PxConvexMeshGeometry’</i></p>
-            <img src="resources/images/documentation/Hierarchy - PxGravityGun with PxConvexMeshGeometry.png"/>
-        </section>
-        <section class="js_section">
-            <h3 class="section_title">Articulations</h3>
-            <p>An articulation is a single actor comprising a set of links (each of which behaves like a rigid body) connected together with special joints. Every articulation has a tree-like structure - so there can be no loops or breaks. Their primary use is modelling physically actuated characters. They support higher mass ratios, more accurate drive models, have better dynamic stability and a more robust recovery from joint separation than standard <i>PhysX</i> joints. However, they are considerably more expensive to simulate.</p>
-            <p>Although articulations do not directly build on joints, they use very similar configuration mechanisms.</p>
-            <p><i>PhysX</i> provides two articulation implementations: maximal and reduced/generalized coordinates.</p>
-            <p>The <b><i>Maximal coordinate articulation</b></i> implementation is designed for game use-cases, specifically powered ragdoll simulations. As such, it supports only spherical joints with limits. This articulation implementation makes some accuracy sacrifices in favor of robustness.</p>
-            <p>The <b><i>Reduced coordinate articulation</b></i> implementation is designed for robotics use-cases. It supports revolute, prismatic, fixed and spherical joints. It was written to favor accurate simulation and produces results that are very close to analytic models of kinematic chains.</p>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">Maximal Coordinate Articulations</h4>
-            <p>To easily create an articulation we will use the same method as before. We will once again use the <i>GravityGun</i> prefab.</p>
-            <img src="resources/images/documentation/Hierarchy - Create PxArticulation with PxBoxGeometry.png"/>
-            <p>In this case, all the articulation links created are therefore of spherical type. We can note the classic joints that have been added to close the loops.</p>
-            <img src="resources/images/documentation/Hierarchy - PxArticulation with PxBoxGeometry.png"/>
-            </p>
-            <img src="resources/images/documentation/Inspector - PxArticulation.png"/>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">Reduced Coordinate Articulation</h4>
-            <p>Same method for the <i>Reduced coordinate articulation</i> implementation.</p>
-            <img src="resources/images/documentation/Hierarchy - Create PxArticulationReducedCoordinate with PxCapsuleGeometry.png"/>
-            </p>
-            <img src="resources/images/documentation/Hierarchy - PxArticulationReducedCoordinate with PxCapsuleGeometry.png"/>
-            </p>
-            <img src="resources/images/documentation/Inspector - PxArticulationReducedCoordinate.png"/>
-        </section>
-        <section class="js_section">
-            <h3 class="section_title">Character Controllers</h3>
-            <p>You can add kinematic controllers to your scene. There are two different types, <b><i>PxBoxController</b></i> and <b><i>PxCapsuleController</b></i> which are created as normal <i>Unity</i> components.</p>
-            <img src="resources/images/documentation/Inspector - Add Component PxCapsuleController.png"/>
-            <p>A character controller is responsible for controlling the physics of a character. You can manage its movements, speed, the height of its jumps, the gravity that applies to it. You can make it collide with the environment or filter some collisions. You can even make it grab a <i>PxActor</i>.</p>
-            <img src="resources/images/documentation/Inspector - PxCapsuleController Settings 1.png"/>
-            <p>The first parameters are used to adjust the movement speed, expressed in meters per second. The orientation is defined by two vectors: the <b><i>Up</b></i> and <b><i>Forward</b></i> vectors. They are adjustable during the play mode.</p>
-            <p><b><i>Max Pitch Angle</b></i> limits the pitch angle so that the forward direction cannot be completely vertical.</p>
-            <p><b><i>Inputs</b></i> is a data container of type <i>PxControllerInputs</i>. By default the controllers use the component <i>PxDefaultControllerInputs</i> which was automatically created in the <i>PxAssets</i> directory.</p>
-            <img src="resources/images/documentation/Inspector - PxDefaultControllerInputs.png"/>
-            <p>It uses the keyboard / mouse combination but you can use it as an example to write your own inputs system.</p>
-            <p>Here is an overview of the settings of a <i>PxController</i>.</p>
-            <img src="resources/images/documentation/Inspector - PxController Settings.png"/>
-            <p>A controller can also grab actors. Here are the settings for this feature.</p>
-            <img src="resources/images/documentation/Inspector - PxController Actor Grabbing.png"/>
-            <p><b><i>Max Distance</b></i> defines the maximum distance at which the actor can be grabbed.</p>
-            <p><b><i>Enable Collision</b></i> indicates whether the grabbed actor can collide or not.</p>
-            <p>When an actor is grabbed by a controller, it is flagged as a kinematic object and moves according to the movements of this controller. This mode of movement can generate vibrations, and the parameter <b><i>Lerp Coefficient</b></i> (value between 0 and 1) is used to visually reduce this inconvenience.</p>
-            <p>However, for an actor to be grabbed in this way by a controller, it must have at least one game object in its hierarchy allowing to describe in which relative position it can be held. This game object just has to be prefixed by <i>C_</i> (for <i>Child</i>).</p>
-            <img src="resources/images/documentation/Hierarchy - Controller Child Anchor.png"/>
-            <p>It can also be prefixed with <i>P_</i> (for <i>Parent</i>). In this case it is the controller which becomes the child of the actor, which is then not flagged as kinematic and continues to be simulated normally. We will talk about it again in the section dedicated to the vehicles.</p>
-        </section>
-        <section class="js_section">
-            <h3 class="section_title">Advanced Collision Detection</h3>
-            <section class="js_section">
-                <h4 class="section_title">Tuning Shape Collision Behavior</h4>
-                <p>Shapes used for contact generation influence the motion of the dynamic rigid bodies they are attached to through contact points. The constraint solver generates impulsive forces at the contact points to keep the shapes resting or moving without passing through each other. Shapes have two important parameters that control how collision detection generates contact points between them, which in turn are central for their behavior when colliding or stacking: <b><i>contactOffset</b></i> and <b><i>restOffset</b></i>.</p>
-                <img src="resources/images/documentation/Inspector - PxShape - Contact and Rest Offsets.png"/>
-                <p>They are set using <i>PxShape.ContactOffset</i> and <i>PxShape.RestOffset</i> respectively. Neither of these values is used directly. Collision detection always operates on a pair of potentially colliding shapes, and it always considers the sum of the offsets of the two shapes. We call these the <i>contactDistance</i> and <i>restDistance</i> respectively.</p>
-                <p>Collision detection is able to generate contact points between two shapes when they are still a distance apart, when they are exactly touching, or when they are inter-penetrating and the interpenetration is considered as a negative distance. So the distance between two shapes can be positive, zero, or negative. <i>SeparationDistance</i> is the distance at which collision detection will start to generate contacts. It has to be greater than zero, meaning that <i>PhysX</i> will always generate contacts when two shapes are penetrating (unless collision detection between the two shapes is in some way completely disabled, such as with filtering). By default, when using metric units and default scaling in <i>PxTolerancesScale</i>, <i>contactOffset</i> is 0.02, which means <i>contactDistance</i> will work out to 4 centimeters. So when two shapes approach each other within 4 centimeters, contacts will be generated until they are again moved further apart than 4 centimeters.</p>
-                <p>The generation of contact points does not however mean that a large impulse will immediately be applied at these locations to separate the shapes, or to even prevent further motion in the direction of penetration. This would make the simulation jitter unless the simulation time step is selected to be tiny, which is not desirable for real time performance. Instead, the force at the contact increase smoothly as penetration increases until it reaches a value sufficiently high to stop any further penetrating motion. The distance at which this maximum force is reached is the <i>restDistance</i>, because at this distance two shapes stacked on each other will reach static equilibrium and come to rest. When the shapes are for some reason pushed together so much that they have a distance below <i>restDistance</i>, an even greater force is applied to push them apart until they are at <i>restDistance</i> again. The variation of force applied as the distance changes is not necessarily linear, but it is smooth and continuous which results in a pleasing simulation even at large time steps.</p>
-                <p>There are a few different things to consider when choosing <i>contactOffset</i> and <i>restOffset</i> for shapes. Typically the same values can be used for all shapes in a simulation. It makes sense to determine <i>restOffset</i> first. The goal is typically to have the graphics shapes appear to stack such that they are exactly touching, like bodies do in real life. If the collision shapes are sized to be the exact same size as the graphics shapes, a <i>restOffset</i> of zero is needed. If the collision shapes are an epsilon bigger than the graphics shapes, a <i>restOffset</i> of negative epsilon is correct. This will let the larger collision shapes sink into each other until the smaller graphics shapes touch too. <i>restOffsets</i> that are larger than zero are practical for example if there are problems with sliding on triangle geometry where the penetration based contact generation has more trouble producing smooth contact points than a separation one, resulting in a smoother slide.</p>
-                <p>Once the <i>restOffset</i> is determined, the <i>contactOffset</i> should be chosen to be a value a slightly larger. The rule of thumb is to make the difference between the two as small as possible that still effectively avoids jitter at the time step size the simulation uses. A larger time step will need the difference to be larger. The drawback of setting it too large is that contacts will be generated sooner as two shapes approach, which drives up the total number of contacts that the simulation has to worry about. This will decrease in performance. Also, the simulation code often makes the assumption that contact points are close to the convex shapes' surface. If the contact offset is very large this assumption breaks down which could lead to behavior artefacts.</p>
-            </section>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">Contact Modification</h4>
-            <p>Under certain circumstances, it may be necessary to specialize contact behavior. For example to implement sticky contacts, give objects the appearance of floating or swimming inside each other, or making objects go through apparent holes in walls. A simple approach to achieve such effects is to let the user change the properties of contacts after they have been generated by collision detection, but before the contact solver. Because both of these steps occur within the scene <i>Simulate()</i> function, a callback must be used.</p>
-            <p>The callback occurs for all pairs of colliding shapes for which the user has specified the pair flag <i>PxPairFlags.ModifyContacts</i> in the filter shader.</p>
-            <p>To listen to these modify callbacks, derive from the class <i>PxContactModifyCallback</i> and implement the function <i>OnContactModify</i>.</p>
-            <p>Here is the default implementation:</p>
-            <img src="resources/images/documentation/code/PxContactModifyCallback.OnContactModify.png"/>
-            <p>If the native pointers (handles) of the two rigid actors involved in the contact are associated with contact modifiers of type <i>IPxContactModifier</i>, the contact information is sent back to them for processing.</p>
-            <p>Here is an example from <i>ContactModifier.cs</i> in the demonstration scene <b><i>ContactModifier_Scene</b></i>:</p>
-            <img src="resources/images/documentation/code/ContactModifier.OnContactModify.png"/>
-            <p>The association of an actor handle and a contact modifier is done in two steps:</p>
-            <img src="resources/images/documentation/code/ContactModifier.ActorHandle.png"/>
-            <p>Every pair of shapes comes with an array of contact points that have a number of properties that can be modified, such as position, contact normal, and separation. For the time being, restitution and friction properties of the contacts cannot be modified. See <i>PxModifiableContact</i> and <i>PxContactSetHandle</i> for properties that can be modified.</p>
-            <p>In our example, each point of contact is modified in order to obtain a specified penetration distance between the two actors. This penetration distance can be changed dynamically via the inspector or by using <i>ContactModifier.PenetrationDistance</i>.</p>
-            <p>In addition to modifying contact properties, it is possible to:
-            <div class="relative">                
-                <ul class="a">
-                    <li><p>Set target velocities for each contact.</p></li>
-                    <li><p>Limit the maximum impulse applied at each contact.</p></li>
-                    <li><p>Adjust inverse mass and inverse inertia scales separately for each body.</p>
-                </ul>
-            </div>
-            <p>Conveyor belt-like effects can be achieved by setting target velocities. Best results are achieved by having target velocities running in tangential directions to the contact normal but the solver does also support target velocities in the direction of the contact normal.</p>
-            <p>The user can limit the impulse applied at each contact by limiting the maximum impulse applied at each contact. This can be useful to produce "soft" contact effects, e.g. to give the impression of energy dissipation due to compression or to limit the impulse applied on a dynamic body due to a kinematic collision. Note that limiting the maximum impulse can potentially lead to additional penetration and bodies passing through each-other.</p>
-            <p>Adjusting mass and inertia scales can be used to tune how contacts between a pair of bodies affect the bodies' linear and angular velocities respectively. Each body in the contact pair has a separate inverse mass and inverse inertia scale. These scales are initialized to 1 and can be adjusted as part of the callback. Note that these values perform local mass modification within the contact pair and affect all contacts within the pair.</p>
-            <p>Uniformly scaling a body's inverse mass and inverse inertia by the same value results in the body behaving like a body that is either heavier or lighter depending on the values used. Providing inverse mass/inverse inertia scales < 1 results in the body appearing heavier; providing scales > 1 result in the body appearing lighter. For example, inverse mass/inertia scales of 0.5 result in the body appearing to have double the mass. Providing inverse mass/inertia scales of 4 would result in the body appearing to have a quarter of its original mass. Providing inverse mass/inertia scale of 0 results in the body behaving as if it has infinite mass.</p>
-            <p>However, it is also possible to non-uniform scale a body's inverse mass and inverse inertia by providing different values to a body's inverse mass and inverse inertia scale. For example, it is possible to reduce or increase the amount of angular velocity change as a result of contacts by adjusting just the inverse inertia scale. The use-cases for this kind of modification are extremely application-dependent but may involve, for example, tuning interactions between a player's vehicle and traffic vehicles in an arcade-style driving game, where the player's car is expected to be bumped by traffic vehicles but where it would be extremely frustrating to the player if the car was to spin-out as a result of the collision. This could also be achieved by making the traffic vehicles much lighter than the player's vehicle but this may make the traffic vehicles appear "too light" and therefore damage the player's immersion.</p>
-            <p>When performing local mass modification, the impulse reported in <i>PxSimulationEventCallback.OnContact()</i> will be relative to the locally scaled masses of the bodies involved in that contact. Therefore, this reported impulse may no longer accurately reflect the change in momentum caused by a given contact. In order to resolve this issue, the extension methods <i>ComputeVelocityDeltaFromImpulse</i> and <i>ComputeLinearAngularImpulse</i> of the rigid body handle extract the linear and angular impulse and velocity change caused by a contact using local mass modification.</p>
-            <p>These methods return separate linear and angular impulse and velocity change values to reflect the fact that the mass and inertia may have been non-uniformly scaled. When local mass modification has been used, it may be necessary to extract separate linear and angular impulses for each contact point, for each body in the pair. Please note that these helper functions are here to provide users with accurate impulse values and are by no means mandatory. For simple use-cases, e.g. triggering effects or damage based on impulse thresholds, the single impulse value reported by the contact report should be perfectly acceptable even when local mass modification has been used. However, if local mass modification has been used and the impulse values are being used for more complex behaviors, e.g. balance control for a ragdoll, then these helper functions will most-likely be required to achieve correct behavior.</p>
-            <p>Please note that, in the case of articulations, <i>ComputeLinearAngularImpulse</i> will return the correct impulse applied on respective articulation link. However, <i>ComputeVelocityDeltaFromImpulse</i> will not return the correct velocity changes for an articulation link because it does not take the effect of any other links of the articulation into account.</p>
-            <p>In addition, the following considerations must be made when using local mass modification:
-            <div class="relative">                
-                <ul class="a">
-                    <li><p>Force thresholding for callbacks will be based on the scalar impulse value in contact reports. This was calculated using the scaled mass/inertias of the bodies so using mass scaling may require these thresholds to be re-tuned.</p></li>
-                    <li><p>Maximum impulse clamping occurs in the solver on an impulse value operating on the scaled masses/inertias. As a result, the magnitude of applied impulses calculated from <i>ComputeLinearAngularImpulse(...)</i> may exceed the <i>maxImpulse</i> in situations where mass scaling was used. In situations where uniform mass scaling was used, the magnitude of the magnitude of linear impulse will not exceed massScale * maxImpulse and angular impulse will not exceed inertiaScale * maxImpulse.</p>
-                </ul>
-            </div>                
-            <p>There are a couple of special requirements for the callback due to the fact that it is coming from deep inside the <i>SDK</i>. In particular, the callback should be thread safe and reentrant. In other words, the <i>SDK</i> may call <i>OnContactModify()</i> from any thread and it may be called concurrently (i.e., asked to process sets of contact modification pairs simultaneously).</p>
-            <p>The contact modification callback can be set from the <i>PxScene</i> inspector.</p>
-            <img src="resources/images/documentation/Inspector - PxScene - ContactModifyCallback.png"/>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">Contact Reporting</h4>
-            <p>It is also possible to simply have access to the contact points.</p>
-            <p>In the same way, a callback occurs for all pairs of colliding shapes for which the user has specified the pair flag <i>PxPairFlags.NotifyContactPoints</i> in the filter shader.</p>
-            <p>You must also specify the different types of notifications that will be sent: <i>PxPairFlags.NotifyTouchFound, .NotifyTouchPersists, .NotifyTouchLost</i>.</p>
-            <p>To listen to these callbacks, derive from the class <i>PxSimulationEventCallback</i> and implement the function <i>OnContact</i>.</p>
-            <p>Here is the default implementation:</p>
-            <img src="resources/images/documentation/code/PxSimulationEventCallback.OnContact.png"/>
-            <p>If the native pointers of the two rigid actors involved in the contact are associated with contact listeners of type <i>IPxContactListener</i>, the contact information is sent back to them for processing.</p>
-            <p>The association of an actor handle and a contact modifier is done in two steps:</p>
-            <img src="resources/images/documentation/code/ContactListener.ActorHandle.png"/>
-            <p>See the demonstration scene <b><i>ContactListener_Scene</b></i> for more details.</p>
-            <p>By default collisions between kinematic rigid bodies and kinematic and static rigid bodies will not get reported. To enable these reports use the <i>kineKineFilteringMode</i> and <i>staticKineFilteringMode</i> parameters of a <i>PxScene</i>.</p>
-            <img src="resources/images/documentation/Inspector - PxScene - Filtering Modes.png"/>
-            <p>Frequently, users are only interested in contact reports if the force of impact is larger than a certain threshold. This allows to reduce the amount of reported pairs which need to get processed. To take advantage of this option the following additional configurations are necessary:</p>
-            <p>Use <i>PxPairFlags.NotifyThresholdForceFound, .NotifyThresholdForcePersists, .NotifyThresholdForceLost</i> instead of <i>.NotifyTouchFound</i> etc. in your custom <i>PxSimulationFilterShaderCallback</i>.</p>
-            <p>Specify the threshold force for a dynamic rigid body through <i>PxRigidDynamic.ContactReportThreshold</i>. If the body collides with another object and the contact force is above the threshold, a report will get sent (if enabled according to the <i>PxPairFlags</i> setting of the pair). If two colliding dynamic bodies both have a force threshold specified then the lower threshold will be used.</p>
-            <p>If a dynamic rigid body collides with multiple static objects, then the impact force of all those contacts will get summed up and used to compare against the force threshold. In other words, even if the impact force against each individual static object is below the threshold, the contact reports will still get sent for each pair if the sum of those forces exceeds the threshold.</p>
-            <p><b><i>Contact Reports and CCD</b></i></p>
-            <p>If continuous collision detection (CCD) with multiple passes is enabled, then a fast moving object might bounce on and off the same object multiple times during a single simulation step. By default, only the first impact will get reported as a <i>NotifyTouchFound</i> event in this case. To get events for the other impacts too, the <i>PxPairFlags.NotifyTouchCcd</i> has to be raised for the collision pair. This will trigger <i>NotifyTouchCcd</i> events for the non-primary impacts. For performance reasons, the system cannot always tell whether the contact pair lost touch in one of the previous CCD passes and thus can also not always tell whether the contact is new or has persisted. <i>NotifyTouchCcd</i> just reports when the two collision objects were detected as being in contact during a CCD pass.</p>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">Extracting Contact information</h4>
-            <p>The <i>OnContact</i> simulation event permits read-only access to all contact points for a given <i>PxContactPairHandle</i>. The contact information is compressed into an appropriate format depending on certain properties, e.g. depending on the shapes involved, the properties of the contacts, materials and whether the contacts are modifiable.</p>
-            <p>As there are a large number of combinations of different formats, <i>PhysX</i> provides two built-in mechanisms to access the contact data. The first approach provides a mechanism to extract contacts from a user buffer, as shown in the example <i>ContactListener.cs</i>, using the method <i>ExtractContacts</i> from <i>PxContactPairHandle</i>.</p>
-            <p>This approach requires copying data to a temporary buffer in order to access it. The second approach allows the user to iterate over the contact information without extracting their own copy, but for the moment this feature is not available in this plugin.</p>
-            <p>This approach is slightly more involved because it requires the user to not only iterate over all of the data but also consider conditions like whether the pair has been flipped or whether impulses have been reported with the pair. However, this approach of iterating over the data in-place may be more efficient because it doesn't require copying data. It will probably be included in a future update.</p>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">Continuous Collision Detection</h4>
-            <p>When continuous collision detection (or CCD) is turned on, the affected rigid bodies will not go through other objects at high velocities (a problem also known as tunnelling). To enable CCD, three things need to be happen:</p>
-            <ol>
-                <li>1.	CCD needs to be turned on at scene level:</li>
-                <img src="resources/images/documentation/Inspector - PxScene - Enable Ccd.png"/>
-                </p>
-                <li>2.	Pairwise CCD needs to be enabled in the pair filter:</li>
-                <img src="resources/images/documentation/code/PxSimulationFilterShaderCallback.FilterShader.png"/>
-                </p>
-                <li>3.	CCD need to be enabled for each <i>PxRigidBody</i> that requires CCD:</li>
-                <img src="resources/images/documentation/Inspector - PxRigidDynamic - Enable Ccd.png"/>
-            </ol>
-            <p>Once enabled, CCD only activates between shapes whose relative speeds are above the sum of their respective CCD velocity thresholds. These velocity thresholds are automatically calculated based on the shape's properties and support non-uniform scales.</p>
-            <p><b><i>Contact Notification and Modification</b></i></p>
-            <p>CCD supports the full set of contact notification events that are supported with the discrete collision detection.</p>
-            <p>CCD also supports contact modification using the class <i>PxCCDContactModifyCallback</i>. The callback operates using the same semantics as the discrete collision detection contact modification callbacks.</p>
-            <p>As with discrete collision detection, CCD will only emit contact modification events for a given pair if the user has specified the pair flag <i>PxPairFlags.ModifyContacts</i> in the filter shader.</p>
-            <p><b><i>Triggers</b></i></p>
-            <p>Currently, shapes flagged with <i>TriggerShape</i> will not be included in CCD. However, it is possible to get trigger events from CCD by not flagging trigger shapes as <i>TriggerShape</i> and instead configuring the filter shaders to return the following state for pairs involving trigger shapes:</p>
-            <img src="resources/images/documentation/code/PxSimulationFilterShaderCallback.FilterShader for Triggers.png"/>
-            <p><b><i>Tuning CCD</b></i></p>
-            <p>The CCD should generally work without any tuning. However, there are 4 properties that can be adjusted:</p>
-            <ol>
-                <li>1.	<i>PxScene.CcdMaxPasses</i>:</li>
-                <p>This parameter controls the number of CCD passes we perform. This is defaulted to 1, meaning that all objects are attempted to be updated to the TOI of their first contact. Any remaining time after the TOI of their first contact will be dropped. Increasing this value permits the CCD to run multiple passes. This reduces the likelihood of time being dropped but can increase the cost of the CCD.</p>
-                <li>2.	<i>PxRigidBody.MinCcdAdvanceCoefficient</i></li>
-                <p>This parameter allows you to adjust the amount by which the CCD advances objects in a given pass. By default, this value is 0.15, meaning that CCD will advance an object by the 0.15 * ccdThreshold, where ccdThreshold is a value computed per-shape that acts as a lower-bound of the maximum amount of time that could be consumed that before there is a chance that the object could have tunnelled. The default value of 0.15 improves the fluidity of motion without risking missed collisions. Reducing this value can negatively impact fluidity but will reduce the likelihood of objects clipping at the end of a frame. Increasing this value may increase the likelihood of objects tunnelling. This value should only be set in the range [0,1].</p>
-                <li>3.	Enabling the flag <i>DisableCcdResweep</i> on the <i>PxScene</i> to disable CCD resweeps.</li>
-                <img src="resources/images/documentation/Inspector - PxScene - Disable Ccd Resweep.png"/>
-                <p>This can result in missed collisions as the result of ricochets but has the potential to reduce the overhead of the CCD. In general, enabling this advancement mode still guarantees that objects will not pass through the static environment but no longer guarantees that dynamic objects with CCD enabled will not pass through each-other.</p>
-                <li>4.	Enabling the flag <i>EnableCcdFriction</i> on <i>PxRigidDynamic</i>.</li>
-                <img src="resources/images/documentation/Inspector - PxRigidDynamic - Enable Ccd Friction.png"/>
-                <p>Enabling this flag enables the application of friction forces in the CCD. This is disabled by default. As the CCD operates using only linear motion, enabling friction inside CCD can cause visual artefacts.</p>
-            </ol>
-            <p><b><i>Performance Implications</b></i></p>
-            <p>Enabling CCD on a scene/all bodies in a scene should be relatively efficient but it will have some performance impact even when all the objects in the scene are moving relatively slowly. A great deal of effort has been put into optimizing the CCD and as a result, this additional overhead should only constitute a very small portion of the overall simulation time when the objects are moving slowly. As the objects' velocities increase, the CCD overhead will increase, especially if there are a lot of high-speed objects in close proximity. Increasing the number of CCD passes can make the CCD more expensive although the CCD will terminate early if the additional passes aren't required.</p>
-            <p><b><i>Limitations</b></i></p>
-            <p>The CCD system is a best-effort conservative advancement scheme. It runs a finite number of CCD substeps (defaulted to 1) and drops any remaining time. Usually, time is only dropped on high-speed objects at the moment of impact so it is not noticeable. However, this artefact can become noticeable if you simulate an object that is sufficiently small/thin relative to the simulation time-step that the object could tunnel if it was accelerated by gravity from rest for 1 frame, i.e. a paper-thin rigid body. Such an object would always be moving at above its CCD velocity threshold and could result in a large proportion of simulation time being dropped for that object and any objects in the same island as it (any objects whose bounds overlap the bounds of that object). This could cause a noticeable slow-down/stuttering effect caused by the objects in that island becoming noticeably out-of-sync with the rest of the simulation. It is therefore recommended that paper-thin/tiny objects should be avoided if possible.</p>
-            <p>It is also recommended that you filter away CCD interactions between bodies that are constrained together, e.g. limbs in the same ragdoll. Allowing CCD interactions between limbs of the same ragdoll could increase the cost of CCD and also potentially cause time to be dropped unnecessarily. CCD interactions are automatically disabled between links in an articulation.</p>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">Raycast CCD</h4>
-            <p>The <i>PhysX</i> SDK supports an alternative CCD implementation based on simple raycasts. Contrary to the built-in CCD algorithm implemented within the <i>PhysX SDK</i>, this cheaper and simpler alternative version is fully implemented outside of the <i>SDK</i> itself.</p>
-            <p>After the traditional <i>Simulate/FetchResults</i> calls, the system performs raycasts from the shapes' center positions to double-check that they did not tunnel. If tunnelling is detected for an object, it is moved back to a previous position along the ray, in an overlap position. Then next frame, the <i>SDK</i>'s contact generation takes over and generates a convincing motion. There are some subtle details not described here, but this is how it works in a nutshell.</p>
-            <p>Since it is raycast-based, the solution is not perfect. In particular, small dynamic objects can still go through the static world if the ray goes through a crack between edges, or a small hole in the world (like the keyhole from a door). Also, dynamic-vs-dynamic CCD is very approximate. It only works well for fast-moving dynamic objects colliding against slow-moving dynamic objects. Other known limitations are that it is currently only implemented for <i>PxRigidDynamic</i> objects (not for <i>PxArticulationLink</i>), and for simple actors with one shape (not for "compounds").</p>
-            <p>However the implementation should be able to prevent important objects from leaving the world, provided the world is watertight. The code is very small, easy to follow or modify, and its performance is often better overall than for the built-in CCD. So it can be a valuable alternative if the default CCD becomes too expensive.</p>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">Speculative CCD</h4>
-            <p>In addition to sweep-based CCD, <i>PhysX</i> also provides a cheaper but less robust approach called speculative CCD. This approach functions differently to the sweep-based CCD in that it operates entirely as part of the discrete simulation by inflating contact offsets based on object motion and depending on the constraint solver to ensure that objects do not tunnel through each-other.</p>
-            <p>This approach generally works well and, unlike the sweep-based CCD, it is legal to enable speculative CCD on kinematic actors. However, there are cases where it can fail to ensure objects do not pass through each-other. As an example, if the constraint solver accelerates an actor (as a result of a collision or joint) such that the actor passes entirely through objects during that time-step, speculative CCD can result in tunneling.</p>
-            <p>To enable this feature, raise the <i>EnableSpeculativeCcd</i> flag on the rigid body that requires CCD:</p>
-            <img src="resources/images/documentation/Inspector - PxRigidDynamic - Enable Speculative Ccd.png"/>
-            <p>Unlike the sweep-based CCD, this form of CCD does not require settings to be raised on either the scene or on the pair in the filter shader.</p>
-            <p>Note that this approach works best with PCM collision detection. It may not function as well if the legacy SAT-based collision detection approach is used.</p>
-            <p>This feature can work in conjunction with the sweep-based CCD, e.g. if a fast-moving kinematic has speculative CCD enabled but dynamic rigid bodies use sweep-based CCD. However, if speculative CCD is used on kinematics in conjunction with sweep-based CCD, it is important to ensure that interactions between the kinematic actor using speculative contacts and the CCD-enabled dynamic actors do not also enable sweep-based CCD interactions otherwise the sweep-based CCD may overrule the speculative CCD, leading to poor behavior.</p>
-        </section>
-        <section class="js_section">
-            <h4 class="section_title">Persistent Contact Manifold (PCM)</h4>
-            <p>The <i>PhysX SDK</i> provides two types of collision detection:</p>
-            <ol>
-                <li>1.	Default collision detection</li>
-                <p>The default collision detection system uses a mixture of SAT (Separating Axis Theorem) and distance-based collision detection to generate full contact manifolds. It generates all the potential contacts in one frame, so it lends itself better to stable stacking. This approach is stable for small contact offsets and rest offsets but may not generate the correct contact points when large offsets are used because it approximates the contact points in these situations by plane shifting.</p>
-                <li>2.	Persistent Contact Manifold (PCM)</li>
-                <p>PCM is a fully distance-based collision detection system. PCM generates a full manifold of contacts when two shapes first come into contact. It recycles and updates the existing contacts from the previous frame in the manifold and then it generates a new contact in the subsequent frame if the shapes move relative to each-other more than a threshold amount or if a contact was dropped from the manifold. If too many contacts are dropped from the manifold due to a large amount of relative motion in a frame, then full manifold generation is re-run. This approach is quite efficient in terms of performance and memory. However, because PCM potentially generates fewer contacts than the default collision detection, it might reduce stacking stability when simulating tall stacks with insufficient solver iterations. As this approach is distance-based, it will generate the correct contact points for arbitrary contact offsets/rest offsets.</p>
-                <p>To enable PCM, set the flag in the <i>PxScene</i> inspector:</p>
-                <img src="resources/images/documentation/Inspector - PxScene - Enable PCM.png"/>
-            </ol>
-        </section>
+            </aside>
+            <article class="content">
+                <section class="js_section">
+                    <h1 class="section_title">Get Started</h1>
+                    <p>The diagram below describes the part of the package that concerns <b>PhysX</b>.</p>
+                    <img src="resources/images/documentation/Ev4sio & PhysX.png" alt="Ev4sio & PhysX"/>
+                    <p>The native plugin is located here: <b>Ev4sio/Assets/Plugins</b>. It makes C++/C# interoperability possible.</p>
+                    <p>The <b>Ev4sio.Core</b> module is composed of two layers:</p>
+                    <div class="relative">
+                        <ul class="a">
+                            <li>
+                                <b>Ev4sio.PhysX.Native</b> is the low level layer. It is independent of the upper layers and allows connection with the native plugin. The elements that compose it can be used directly but it is very risky since the slightest error of instantiation/destruction of native elements can result in a crash of <b>Unity</b>.
+                            </li>
+                            <li>
+                                The <b>Ev4sio.PhysX.Assets</b> layer is there to facilitate the use of the low level features. This is where we can find the <b>PxManager</b> singleton that we will talk about next. The objective here is to reproduce the global structure of the <b>PhysX SDK</b> and to automatically manage the initialization and the instantiation / destruction of the different elements of the simulation.
+                            </li>
+                        </ul>
+                    </div>
+                    <p>The <b>Ev4sio.Physics</b> module provides higher level features as well as usage examples.</p>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">Ev4sio Window</h4>
+                    <p>When opening <b>Unity</b> for the first time after the installation of the package, the <b>Ev4sio</b> window appears automatically.</p>
+                    <img src="resources/images/documentation/Ev4sio Window.png"/>
+                    <p>It is possible to prevent it from reopening on subsequent starts by using the option at the bottom. You can also open this window using the menu <b>Window/Ev4sio</b>.</p>
+                </section>
+                <section class="js_section">
+                    <h3 class="section_title">PxManager Singleton</h3>
+                    <p>When <b>Unity</b> is opened for the first time with the package, various assets essential for the tool are also automatically created. They are stored in the <b>Resources</b> directory.</p>
+                    <img src="resources/images/documentation/Project - Composition PxAssets.png"/>
+                    <p>One of these elements is a singleton named <b>PxManager</b>.</p>
+                    <p>This singleton is of type <b>SingletonScriptableObject</b> and is saved in the Singletons directory. All singletons of this type are located in this directory.</p>
+                    <p><b>PxManager</b> is essential when using this plugin. It gives access to some settings and to the various <b>PhysX</b> components of the different scenes.</p>
+                    <p>Here are its settings as they appear in the <b>Inspector</b>.</p>
+                    <img src="resources/images/documentation/Inspector - PxManager.png"/>
+                    <p>We can see the references to default assets that were also created automatically and added to the <b>PxAssets</b> directory.</p>
+                    <img src="resources/images/documentation/Project - PxAssets.png"/>
+                    <p>These different components can be adjusted or even replaced if necessary. As their names indicate, they will be used by default by the other components.</p>
+                    <p><b>PhysX</b> is designed to produce correct results regardless of the units of length or mass, so long as inputs use those units consistently. However, there are certain tolerances values whose defaults need to be adjusted depending on the units. In order to ensure that these tolerances default to reasonable values, adjust the parameters <b><b>ScaleLength</b></b> and <b><b>ScaleSpeed</b></b>. You should set them based on the typical size of objects in your simulation. For example, if you are working with objects of size approximately one meter, but in units of centimeters, you should set the scale values as follows:</p>
+                    <img src="resources/images/documentation/Inspector - PxManager - TolerancesScale.png"/>
+                    <p>It is important to use consistent scale values everywhere in your application.</p>
+                    <p>Use the <b><b>Minimal Additional Components</b></b> parameter to avoid linking the code of some <b>PhysX</b> features that are not always used in order to save memory. Currently the optional features are the articulations and the height fields. By default this flag is disabled and you can use these features.</p>
+                    <p>The <b><b>Use Vehicle Library</b></b> checkbox allows the use of the vehicle module. This module is described in the <b>Vehicles</b> section. By default the flag is disabled so you cannot use vehicles.</p>
+                    <p>With the <b><b>Use Visual Debugger</b></b> checkbox you can visualize, debug and profile your simulation using the <b>PhysX Visual Debugger</b>. But for that you must first have installed and launched the application:
+                    <a href="https://developer.nvidia.com/physx-visual-debugger">https://developer.nvidia.com/physx-visual-debugger</a></p>
+                    <img src="resources/images/documentation/Inspector - PxManager - Visual Debugger.png"/>
+                    <p>This tool provides a graphical view of the <b>PhysX</b> scene and includes various tools to inspect and visualize variables of every <b>PhysX</b> object. Additionally it can also record and visualize memory and timing data. You can refer to its detailed built-in help for more information on the usage of the GUI.</p>
+                    <p>For the display to match that of <b>Unity</b>, you need to set the <b>Chirality</b> parameter to <b>Left-Handed</b>.</p>
+                    <br/>
+                    <p>All these settings can be found in the <b>Ev4sio</b> window, by clicking on <b>PhysX 4.1.2 Manager</b>.</p>
+                    <img src="resources/images/documentation/Ev4sio Window - PxManager Settings.png"/>
+                </section>
+                <section class="js_section">
+                    <h3 class="section_title">Default Assets</h3>
+                    <p>All the default assets are of type <b>ScriptableObject</b>. They are data containers. Once set, this type of asset can be used by multiple components at once.</p>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">PxDefaultAllocator</h4>
+                    <p>This is the default implementation of the allocator interface required by the PhysX SDK. </p>
+                    <img src="resources/images/documentation/Inspector - PxDefaultAllocator.png"/>
+                    <p><b><b>AreComponentsInstantiated</b></b> indicates if the components which are necessary for this asset have been instantiated. You will see this flag on all the elements that depend on other associated components, such as for example native instances of the <b>PhysX</b> API, which are accessible through <b>handles</b>.</p>
+                    <p><b><b>DisplayDataAllocationInfo</b></b> allows you to display information about the allocations made in <b>PhysX</b>.</p>
+                </section>        
+                <section class="js_section">
+                    <h4 class="section_title">PxDefaultCpuDispatcher</h4>
+                    <p>This is a default implementation for a CPU task dispatcher.</p>
+                    <img src="resources/images/documentation/Inspector - PxDefaultCpuDispatcher.png"/>
+                    <p><b>PhysicalCoreCount</b> indicates the number of physical cores available. You can set the number of CPU used by the simulation via the <b><b>Thread Count</b></b> setting.</p>
+                </section>        
+                <section class="js_section">
+                    <h4 class="section_title">PxDefaultMaterial</h4>
+                    <p>This is a physics material of type <b>PxMaterial</b> that will be used by all objects if you do not apply a specific one to them.</p>
+                    <img src="resources/images/documentation/Inspector - PxDefaultMaterial.png"/>
+                    <p>You can create other <b>PxMaterial</b> assets using the menu <b>Assets/Create/Ev4sio/Core/PxMaterial</b>.</p>
+                </section>        
+                <section class="js_section">
+                    <h4 class="section_title">PxDefaultScene</h4>
+                    <p>This is a <b>PxScene</b> and the central asset to perform the simulation.</p>
+                    <p>A <b>PxScene</b> contains a collection of bodies and constraints which can interact. It simulates the behavior of objects over time. Several scenes may exist at the same time, but each body or constraint is specific to a scene. They may not be shared.</p>
+                    <p>Here is the list of its settings as they appear in the Inspector.</p>
+                    <img src="resources/images/documentation/Inspector - PxDefaultScene 1.png"/>
+                    <p><b><b>Frequency</b></b> is used to adjust the simulation frequency of the scene. If its value is zero, the simulation frequency corresponds to the <b>FixedUpdate</b> frequency. Be careful to use a reasonable value (between 60 and 100Hz) in order not to impact performance.</p>
+                    <p>The <b><b>Gravity</b></b> value will be applied to all objects in the scene.</p>
+                    <p>Then there is a set of callbacks, most of which are optional. They are all of type <b>ScriptableObject</b>. We can see three default callbacks.</p>
+                    <img src="resources/images/documentation/Inspector - PxDefaultScene 2.png"/>
+                    <p>The documentation will try to detail these different settings but you can also refer to the official documentation provided by <b>NVidia</b>.</p>
+                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/API.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/API.html</a></p>
+                </section>        
+                <section class="js_section">
+                    <h3 class="section_title">Scene Manager</h3>
+                    <p>The second part of the <b>Ev4sio</b> window concerns the management of the current scene.</p>
+                    <p>To simulate the tool components you have to create a <b>SingletonMonoBehaviour</b> in your scene. To do this, click on the <b>CreateSceneSingleton</b> button.</p>
+                    <img src="resources/images/documentation/Ev4sio Window - SceneManager - Create Scene Singleton.png"/>
+                    <p/>
+                    <img src="resources/images/documentation/Hierarchy - Scene Singleton.png"/>
+                    <p>Unlike <b>PxManager</b>, this singleton is a <b>MonoBehaviour</b>. It allows the updating of the different components which will be described later. Indeed, no other component of this tool uses the classic <b>Update</b> and <b>FixedUpdate</b> methods of a <b>MonoBehaviour</b> and they need this singleton to be updated. The objective is to have a better control of the life-cycles.</p>
+                    </br>
+                    <p>At this time, the tool has been initialized and the scene is ready for the simulation. We are now going to detail the different components that you can put in your scene.</p>
+                </section>
+                <section class="js_section">
+                    <h3 class="section_title">Rigid Actors</h3>
+                    <p>The rigid actors are the elements that are associated with shapes allowing them to collide with their environment.</p>
+                    <img src="resources/images/documentation/PxActor.png"/>
+                    <p>You can easily see the correspondence with the original architecture:</p>
+                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/RigidBodyOverview.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/RigidBodyOverview.html</a></p>             
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">PxRigidStatic</h4>
+                    <p>Here is the user-friendly method to add an infinite static plane to our scene.</p>
+                    <p>After selecting the scene, right click and use the menu <b>GameObject/Ev4sio/Create ‘PxRigidStatic’ Object Or Aggregate/Using ‘PxPlaneGeometry’</b></p>
+                    <img src="resources/images/documentation/Hierarchy - PxRigidStatic and PxPlaneGeometry.png"/>
+                    <p>It creates a game object with a <b>PxRigidStatic</b> component and its associated <b>PxPlaneGeometry</b> (of type <b>PxShape</b>).</p>
+                    <img src="resources/images/documentation/Inspector - PxRigidStatic.png"/>
+                    <p><b>Note: gizmos of the different shapes are displayed in red color.</b></p>
+                    <p>See the <b>Shape and Geometries</b> section for more details on a <b>PxShape</b>.</p>
+                    <p>Here is another example of a static object creation using a height field.</p>
+                    <img src="resources/images/documentation/Hierarchy - PxRigidStatic and PxHeightFieldGeometry.png"/>
+                    </p>
+                    <img src="resources/images/documentation/Inspector - PxRigidStatic and PxHeightFieldGeometry.png"/>
+                    </p>
+                    <img src="resources/images/documentation/Scene - HeightField.png"/>
+                    <p><b>Note: it is possible to achieve the same result by creating each component manually and associating them with each other.</b></p>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">PxRigidDynamic</h4>
+                    <p>In the same way we can easily add a dynamic component and a shape to an existing game object, provided it has a mesh filter component.</p>
+                    <img src="resources/images/documentation/Hierarchy - PxRigidDynamic and PxBoxGeometry.png"/>
+                    </p>
+                    <img src="resources/images/documentation/Inspector - PxRigidDynamic and PxBoxGeometry.png"/>
+                    <p>If we had used the option <b>With 'PxConvexMeshGeometry’</b>:</p>
+                    <img src="resources/images/documentation/Inspector - PxRigidDynamic and PxConvexMeshGeometry.png"/>
+                    <p>A <b>PxActor</b> component is a <b>MonoBehaviour</b>. You can also add it manually to a game object using the <b>Component</b> menu <b>Ev4sio/Core/PxActor/…</b> In this case your actor has no shape and cannot be simulated. You must associate at least one shape with it.</p>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">PxArticulationLink</h4>
+                    <p>This type of rigid body concerns the articulations. It will be discussed later.</p>
+                </section>
+                <section class="js_section">
+                    <h3 class="section_title">Shape and Geometries</h3>
+                    <p>A <b>PxShape</b> is also a <b>MonoBehaviour</b>. Unlike the architecture of <b>PhysX</b>, the different geometries derive from it. In <b>PhysX</b>, shapes and geometries are implemented in separate classes but they have been grouped in the plugin to facilitate their edition.</p>
+                    <img src="resources/images/documentation/PxShape & PxGeometry.png"/>
+                    <p>There are two categories of shapes.</p>
+                    <p>The primitives (<b>PxBoxGeometry, PxCapsuleGeometry, PxPlaneGeometry</b> and <b>PxSphereGeometry</b>) which contain all of the data.</p>
+                    <p>The meshes or height fields (<b>PxConvexMeshGeometry, PxTriangleMeshGeometry</b> and <b>PxHeightFieldGeometry</b>) for whom the data is contained in a much larger object (<b>PxConvexMesh, PxTriangleMesh</b> and <b>PxHeightField</b> respectively). You can use these objects with different scales in each <b>PxShape</b> type which references them.</p>
+                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Geometry.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Geometry.html</a></p>
+                    <p>Once again, there is a simple way to create a shape and automatically associate it with an actor. For this you have to right click on a game object already containing an actor component.</p>
+                    <img src="resources/images/documentation/Hierarchy - Add PxShape.png"/>
+                    </p>
+                    <img src="resources/images/documentation/Inspector - PxRigidDynamic - Multi shapes.png"/>
+                    <p>Once you have created the shapes of a rigid actor, you can edit them.</p>
+                    <img src="resources/images/documentation/Inspector - Edit Shape.png"/>
+                    <p>Or you can restore their original settings.</p>
+                    <img src="resources/images/documentation/Inspector - Restore Shape.png"/>
+                    <p>You can also edit the position of the center of gravity, represented by a green cube.</p>
+                    <img src="resources/images/documentation/Inspector - Edit Center Of Mass Local Pose.png"/>
+                </section>
+                <section class="js_section">
+                    <h3 class="section_title">Joints</h3>
+                    <p>Now that we are able to add dynamic objects to our scene, we can also create mechanical joints to add movement constraints.</p>
+                    <img src="resources/images/documentation/Hierarchy - Create PxJoint.png"/>
+                    </p>
+                    <img src="resources/images/documentation/Hierarchy - PxSphericalJoint.png"/>
+                    <p>One of the selected game objects must contain a moveable actor. If only one game object containing an actor is selected, the joint is created between this actor and the static world. If two actors are selected then they will be constrained together by the joint.</p>
+                    <img src="resources/images/documentation/Inspector - PxSphericalJoint.png"/>
+                    <p>A joint constrains the way two actors move relative to one another. In the case of a revolute joint, it constrains the origin points of the two frames to be coincident and their x-axes to coincide, but allows the two actors to rotate freely relative to one another around this common axis. A typical use for a joint would be to model a door hinge or the shoulder of a character.</p>
+                    <p>PhysX supports six different joint types:
+                    <div class="relative">                
+                        <ul class="a">
+                            <li><p>A fixed joint locks the orientations and origins rigidly together</p></li>
+                            <li><p>A distance joint keeps the origins within a certain distance range</p>
+                            <li><p>A spherical joint (also called a <b>ball-and-socket</b>) keeps the origins together, but allows the orientations to vary freely.</p>
+                            <li><p>A revolute joint (also called a <b>hinge</b>) keeps the origins and x-axes of the frames together, and allows free rotation around this common axis.</p>
+                            <li><p>A prismatic joint (also called a <b>slider</b>) keeps the orientations identical, but allows the origin of each frame to slide freely along the common x-axis.</p>
+                            <li><p>A D6 joint is a highly configurable joint that allows specification of individual degrees of freedom either to move freely or be locked together. It can be used to implement a wide variety of mechanical and anatomical joints, but is somewhat less intuitive to configure than the other joint types.</p>
+                        </ul>
+                    </div>                
+                    <p>The official documentation provides much more detailed information on each type of joint.</p>
+                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Joints.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Joints.html</a></p>
+                    <p>The string-damper joint available in the sources of <b>Ev4sio.Physics</b> gives an example of implementation with the combination of two joints, and shows how the Assets and Native layers work together.</p>
+                </section>
+                <section class="js_section">
+                    <h3 class="section_title">Custom Joints</h3>
+                    <p>Joints cover many common scenarios, but if you have use cases that are not met by the conventional joints, you can implement your own.</p>
+                    <p>It is possible using the <b>PxCustomJoint</b> class. As an example you can find the <b>PxPulleyJoint</b> class in <b>Ev4sio.Physics</b>, which is a rewrite of a snippet provided as an example in the <b>PhysX</b> library. This is an advanced topic, and assumes familiarity with the mathematics underlying rigid body simulation.</p>
+                </section>
+                <section class="js_section">
+                    <h3 class="section_title">Aggregates</h3>
+                    <p>An aggregate is a collection of actors. Aggregates do not provide extra simulation or query features, but allow you to specify that a set of actors will be clustered together, which in turn allows the <b>SDK</b> to optimize its spatial data operations. A typical use case is a ragdoll, made of multiple different actors. Without aggregates, this gives rise to as many broad-phase entries as there are shapes in the ragdoll. It is typically more efficient to represent the ragdoll in the broad-phase as a single entity, and perform internal overlap tests in a second pass if necessary. Another potential use case is a single actor with a large number of attached shapes.</p>
+                    <p>So aggregates are used to lighten the load on broad phases. When running broad phase on the CPU, aggregates frequently improve performance by reducing the load on the core broad phase algorithm. However, it should be noted that there is some cost when aggregates overlap because these overlaps must be processed by a separate module.</p>
+                    <p>If you add a component of type <b>PxAggregate</b> to a game object, all you have to do is press the button <b>TryFillFromHierarchy</b> to add all the actors that are in this game object and its children.</p>
+                    <img src="resources/images/documentation/Inspector - PxAggregate.png"/>
+                    <p>The maximum number of actors is currently limited to 128, and for efficiency should be set as low as possible.</p>
+                    <p>If you will never need collisions between the actors of the aggregate, disable them at creation time using the <b>Enable Self Collision</b> checkbox. This is much more efficient than using the scene filtering mechanism, as it bypasses all internal filtering logic. A typical use case would be an aggregate of static or kinematic actors.</p>
+                    <p>Note that both the maximum number of actors and the self-collision attribute are immutable.</p>
+                    <p>We will now see a very simple method to create easily a set of actors placed in the same aggregate and eventually connected by joints.</p>
+                    <p>As an example we will use the <b>GravityGun</b> prefab that you can find in the <b>Prefabs</b> directory.</p>
+                    <img src="resources/images/documentation/Hierarchy - GravityGun prefab.png"/>
+                    <p>This prefab is made up of a number of game objects prefixed by <b>J_</b> or <b>A_</b>.</p>
+                    <p>Each game object prefixed with <b>A_</b> contains a mesh, via a component of type <b>mesh filter</b>, and its associated <b>mesh renderer</b>. It indicates the presence of an actor, and the mesh is used to define its shape.</p>
+                    <p>Each game object prefixed with <b>J_</b> has a name which starts with the name of a joint. It designates the location and orientation of a joint of this type. And the last two sections of that name each indicate which actor is connected to the other.</p>
+                    <p>It is essential to respect this nomenclature so that the following feature can work correctly.</p>
+                    <p>Select the root of the prefab hierarchy, right click, and choose the option <b>Create ‘PxRigidDynamic’ Object Or Aggregate</b> option. In this example we will generate box geometries.</p>
+                    <img src="resources/images/documentation/Hierarchy - Create PxAggregate with PxBoxGeometry.png"/>
+                    <p>This action creates another hierarchy of game objects containing <b>PxRigidDynamic</b> and <b>PxJoint</b> components. Each mesh used to generate <b>PxShape</b> components is duplicated to avoid corrupting the prefab.</p>
+                    <img src="resources/images/documentation/Hierarchy - PxGravityGun with PxBoxGeometry.png"/>
+                    </p>
+                    <img src="resources/images/documentation/Inspector - PxGravityGun - PxAggregate.png"/>
+                    <p>We note the automatic creation of an aggregate containing all the actors of the hierarchy, with the collisions disabled between these different actors.</p>
+                    <p>If there had been only one actor in the hierarchy, the aggregate would not have been created.</p>
+                    <p>If we had used the option <b>With 'PxCapsuleGeometry’</b></p>
+                    <img src="resources/images/documentation/Hierarchy - PxGravityGun with PxCapsuleGeometry.png"/>
+                    <p>Or <b>With 'PxConvexMeshGeometry’</b></p>
+                    <img src="resources/images/documentation/Hierarchy - PxGravityGun with PxConvexMeshGeometry.png"/>
+                </section>
+                <section class="js_section">
+                    <h3 class="section_title">Articulations</h3>
+                    <p>An articulation is a single actor comprising a set of links (each of which behaves like a rigid body) connected together with special joints. Every articulation has a tree-like structure - so there can be no loops or breaks. Their primary use is modelling physically actuated characters. They support higher mass ratios, more accurate drive models, have better dynamic stability and a more robust recovery from joint separation than standard <b>PhysX</b> joints. However, they are considerably more expensive to simulate.</p>
+                    <p>Although articulations do not directly build on joints, they use very similar configuration mechanisms.</p>
+                    <p><b>PhysX</b> provides two articulation implementations: maximal and reduced/generalized coordinates.</p>
+                    <p>The <b><b>Maximal coordinate articulation</b></b> implementation is designed for game use-cases, specifically powered ragdoll simulations. As such, it supports only spherical joints with limits. This articulation implementation makes some accuracy sacrifices in favor of robustness.</p>
+                    <p>The <b><b>Reduced coordinate articulation</b></b> implementation is designed for robotics use-cases. It supports revolute, prismatic, fixed and spherical joints. It was written to favor accurate simulation and produces results that are very close to analytic models of kinematic chains.</p>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">Maximal Coordinate Articulations</h4>
+                    <p>To easily create an articulation we will use the same method as before. We will once again use the <b>GravityGun</b> prefab.</p>
+                    <img src="resources/images/documentation/Hierarchy - Create PxArticulation with PxBoxGeometry.png"/>
+                    <p>In this case, all the articulation links created are therefore of spherical type. We can note the classic joints that have been added to close the loops.</p>
+                    <img src="resources/images/documentation/Hierarchy - PxArticulation with PxBoxGeometry.png"/>
+                    </p>
+                    <img src="resources/images/documentation/Inspector - PxArticulation.png"/>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">Reduced Coordinate Articulation</h4>
+                    <p>Same method for the <b>Reduced coordinate articulation</b> implementation.</p>
+                    <img src="resources/images/documentation/Hierarchy - Create PxArticulationReducedCoordinate with PxCapsuleGeometry.png"/>
+                    </p>
+                    <img src="resources/images/documentation/Hierarchy - PxArticulationReducedCoordinate with PxCapsuleGeometry.png"/>
+                    </p>
+                    <img src="resources/images/documentation/Inspector - PxArticulationReducedCoordinate.png"/>
+                </section>
+                <section class="js_section">
+                    <h3 class="section_title">Character Controllers</h3>
+                    <p>You can add kinematic controllers to your scene. There are two different types, <b><b>PxBoxController</b></b> and <b><b>PxCapsuleController</b></b> which are created as normal <b>Unity</b> components.</p>
+                    <img src="resources/images/documentation/Inspector - Add Component PxCapsuleController.png"/>
+                    <p>A character controller is responsible for controlling the physics of a character. You can manage its movements, speed, the height of its jumps, the gravity that applies to it. You can make it collide with the environment or filter some collisions. You can even make it grab a <b>PxActor</b>.</p>
+                    <img src="resources/images/documentation/Inspector - PxCapsuleController Settings 1.png"/>
+                    <p>The first parameters are used to adjust the movement speed, expressed in meters per second. The orientation is defined by two vectors: the <b><b>Up</b></b> and <b><b>Forward</b></b> vectors. They are adjustable during the play mode.</p>
+                    <p><b><b>Max Pitch Angle</b></b> limits the pitch angle so that the forward direction cannot be completely vertical.</p>
+                    <p><b><b>Inputs</b></b> is a data container of type <b>PxControllerInputs</b>. By default the controllers use the component <b>PxDefaultControllerInputs</b> which was automatically created in the <b>PxAssets</b> directory.</p>
+                    <img src="resources/images/documentation/Inspector - PxDefaultControllerInputs.png"/>
+                    <p>It uses the keyboard / mouse combination but you can use it as an example to write your own inputs system.</p>
+                    <p>Here is an overview of the settings of a <b>PxController</b>.</p>
+                    <img src="resources/images/documentation/Inspector - PxController Settings.png"/>
+                    <p>A controller can also grab actors. Here are the settings for this feature.</p>
+                    <img src="resources/images/documentation/Inspector - PxController Actor Grabbing.png"/>
+                    <p><b><b>Max Distance</b></b> defines the maximum distance at which the actor can be grabbed.</p>
+                    <p><b><b>Enable Collision</b></b> indicates whether the grabbed actor can collide or not.</p>
+                    <p>When an actor is grabbed by a controller, it is flagged as a kinematic object and moves according to the movements of this controller. This mode of movement can generate vibrations, and the parameter <b><b>Lerp Coefficient</b></b> (value between 0 and 1) is used to visually reduce this inconvenience.</p>
+                    <p>However, for an actor to be grabbed in this way by a controller, it must have at least one game object in its hierarchy allowing to describe in which relative position it can be held. This game object just has to be prefixed by <b>C_</b> (for <b>Child</b>).</p>
+                    <img src="resources/images/documentation/Hierarchy - Controller Child Anchor.png"/>
+                    <p>It can also be prefixed with <b>P_</b> (for <b>Parent</b>). In this case it is the controller which becomes the child of the actor, which is then not flagged as kinematic and continues to be simulated normally. We will talk about it again in the section dedicated to the vehicles.</p>
+                </section>
+                <section class="js_section">
+                    <h3 class="section_title">Advanced Collision Detection</h3>
+                    <section class="js_section">
+                        <h4 class="section_title">Tuning Shape Collision Behavior</h4>
+                        <p>Shapes used for contact generation influence the motion of the dynamic rigid bodies they are attached to through contact points. The constraint solver generates impulsive forces at the contact points to keep the shapes resting or moving without passing through each other. Shapes have two important parameters that control how collision detection generates contact points between them, which in turn are central for their behavior when colliding or stacking: <b><b>contactOffset</b></b> and <b><b>restOffset</b></b>.</p>
+                        <img src="resources/images/documentation/Inspector - PxShape - Contact and Rest Offsets.png"/>
+                        <p>They are set using <b>PxShape.ContactOffset</b> and <b>PxShape.RestOffset</b> respectively. Neither of these values is used directly. Collision detection always operates on a pair of potentially colliding shapes, and it always considers the sum of the offsets of the two shapes. We call these the <b>contactDistance</b> and <b>restDistance</b> respectively.</p>
+                        <p>Collision detection is able to generate contact points between two shapes when they are still a distance apart, when they are exactly touching, or when they are inter-penetrating and the interpenetration is considered as a negative distance. So the distance between two shapes can be positive, zero, or negative. <b>SeparationDistance</b> is the distance at which collision detection will start to generate contacts. It has to be greater than zero, meaning that <b>PhysX</b> will always generate contacts when two shapes are penetrating (unless collision detection between the two shapes is in some way completely disabled, such as with filtering). By default, when using metric units and default scaling in <b>PxTolerancesScale</b>, <b>contactOffset</b> is 0.02, which means <b>contactDistance</b> will work out to 4 centimeters. So when two shapes approach each other within 4 centimeters, contacts will be generated until they are again moved further apart than 4 centimeters.</p>
+                        <p>The generation of contact points does not however mean that a large impulse will immediately be applied at these locations to separate the shapes, or to even prevent further motion in the direction of penetration. This would make the simulation jitter unless the simulation time step is selected to be tiny, which is not desirable for real time performance. Instead, the force at the contact increase smoothly as penetration increases until it reaches a value sufficiently high to stop any further penetrating motion. The distance at which this maximum force is reached is the <b>restDistance</b>, because at this distance two shapes stacked on each other will reach static equilibrium and come to rest. When the shapes are for some reason pushed together so much that they have a distance below <b>restDistance</b>, an even greater force is applied to push them apart until they are at <b>restDistance</b> again. The variation of force applied as the distance changes is not necessarily linear, but it is smooth and continuous which results in a pleasing simulation even at large time steps.</p>
+                        <p>There are a few different things to consider when choosing <b>contactOffset</b> and <b>restOffset</b> for shapes. Typically the same values can be used for all shapes in a simulation. It makes sense to determine <b>restOffset</b> first. The goal is typically to have the graphics shapes appear to stack such that they are exactly touching, like bodies do in real life. If the collision shapes are sized to be the exact same size as the graphics shapes, a <b>restOffset</b> of zero is needed. If the collision shapes are an epsilon bigger than the graphics shapes, a <b>restOffset</b> of negative epsilon is correct. This will let the larger collision shapes sink into each other until the smaller graphics shapes touch too. <b>restOffsets</b> that are larger than zero are practical for example if there are problems with sliding on triangle geometry where the penetration based contact generation has more trouble producing smooth contact points than a separation one, resulting in a smoother slide.</p>
+                        <p>Once the <b>restOffset</b> is determined, the <b>contactOffset</b> should be chosen to be a value a slightly larger. The rule of thumb is to make the difference between the two as small as possible that still effectively avoids jitter at the time step size the simulation uses. A larger time step will need the difference to be larger. The drawback of setting it too large is that contacts will be generated sooner as two shapes approach, which drives up the total number of contacts that the simulation has to worry about. This will decrease in performance. Also, the simulation code often makes the assumption that contact points are close to the convex shapes' surface. If the contact offset is very large this assumption breaks down which could lead to behavior artefacts.</p>
+                    </section>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">Contact Modification</h4>
+                    <p>Under certain circumstances, it may be necessary to specialize contact behavior. For example to implement sticky contacts, give objects the appearance of floating or swimming inside each other, or making objects go through apparent holes in walls. A simple approach to achieve such effects is to let the user change the properties of contacts after they have been generated by collision detection, but before the contact solver. Because both of these steps occur within the scene <b>Simulate()</b> function, a callback must be used.</p>
+                    <p>The callback occurs for all pairs of colliding shapes for which the user has specified the pair flag <b>PxPairFlags.ModifyContacts</b> in the filter shader.</p>
+                    <p>To listen to these modify callbacks, derive from the class <b>PxContactModifyCallback</b> and implement the function <b>OnContactModify</b>.</p>
+                    <p>Here is the default implementation:</p>
+                    <img src="resources/images/documentation/code/PxContactModifyCallback.OnContactModify.png"/>
+                    <p>If the native pointers (handles) of the two rigid actors involved in the contact are associated with contact modifiers of type <b>IPxContactModifier</b>, the contact information is sent back to them for processing.</p>
+                    <p>Here is an example from <b>ContactModifier.cs</b> in the demonstration scene <b><b>ContactModifier_Scene</b></b>:</p>
+                    <img src="resources/images/documentation/code/ContactModifier.OnContactModify.png"/>
+                    <p>The association of an actor handle and a contact modifier is done in two steps:</p>
+                    <img src="resources/images/documentation/code/ContactModifier.ActorHandle.png"/>
+                    <p>Every pair of shapes comes with an array of contact points that have a number of properties that can be modified, such as position, contact normal, and separation. For the time being, restitution and friction properties of the contacts cannot be modified. See <b>PxModifiableContact</b> and <b>PxContactSetHandle</b> for properties that can be modified.</p>
+                    <p>In our example, each point of contact is modified in order to obtain a specified penetration distance between the two actors. This penetration distance can be changed dynamically via the inspector or by using <b>ContactModifier.PenetrationDistance</b>.</p>
+                    <p>In addition to modifying contact properties, it is possible to:
+                    <div class="relative">                
+                        <ul class="a">
+                            <li><p>Set target velocities for each contact.</p></li>
+                            <li><p>Limit the maximum impulse applied at each contact.</p></li>
+                            <li><p>Adjust inverse mass and inverse inertia scales separately for each body.</p>
+                        </ul>
+                    </div>
+                    <p>Conveyor belt-like effects can be achieved by setting target velocities. Best results are achieved by having target velocities running in tangential directions to the contact normal but the solver does also support target velocities in the direction of the contact normal.</p>
+                    <p>The user can limit the impulse applied at each contact by limiting the maximum impulse applied at each contact. This can be useful to produce "soft" contact effects, e.g. to give the impression of energy dissipation due to compression or to limit the impulse applied on a dynamic body due to a kinematic collision. Note that limiting the maximum impulse can potentially lead to additional penetration and bodies passing through each-other.</p>
+                    <p>Adjusting mass and inertia scales can be used to tune how contacts between a pair of bodies affect the bodies' linear and angular velocities respectively. Each body in the contact pair has a separate inverse mass and inverse inertia scale. These scales are initialized to 1 and can be adjusted as part of the callback. Note that these values perform local mass modification within the contact pair and affect all contacts within the pair.</p>
+                    <p>Uniformly scaling a body's inverse mass and inverse inertia by the same value results in the body behaving like a body that is either heavier or lighter depending on the values used. Providing inverse mass/inverse inertia scales < 1 results in the body appearing heavier; providing scales > 1 result in the body appearing lighter. For example, inverse mass/inertia scales of 0.5 result in the body appearing to have double the mass. Providing inverse mass/inertia scales of 4 would result in the body appearing to have a quarter of its original mass. Providing inverse mass/inertia scale of 0 results in the body behaving as if it has infinite mass.</p>
+                    <p>However, it is also possible to non-uniform scale a body's inverse mass and inverse inertia by providing different values to a body's inverse mass and inverse inertia scale. For example, it is possible to reduce or increase the amount of angular velocity change as a result of contacts by adjusting just the inverse inertia scale. The use-cases for this kind of modification are extremely application-dependent but may involve, for example, tuning interactions between a player's vehicle and traffic vehicles in an arcade-style driving game, where the player's car is expected to be bumped by traffic vehicles but where it would be extremely frustrating to the player if the car was to spin-out as a result of the collision. This could also be achieved by making the traffic vehicles much lighter than the player's vehicle but this may make the traffic vehicles appear "too light" and therefore damage the player's immersion.</p>
+                    <p>When performing local mass modification, the impulse reported in <b>PxSimulationEventCallback.OnContact()</b> will be relative to the locally scaled masses of the bodies involved in that contact. Therefore, this reported impulse may no longer accurately reflect the change in momentum caused by a given contact. In order to resolve this issue, the extension methods <b>ComputeVelocityDeltaFromImpulse</b> and <b>ComputeLinearAngularImpulse</b> of the rigid body handle extract the linear and angular impulse and velocity change caused by a contact using local mass modification.</p>
+                    <p>These methods return separate linear and angular impulse and velocity change values to reflect the fact that the mass and inertia may have been non-uniformly scaled. When local mass modification has been used, it may be necessary to extract separate linear and angular impulses for each contact point, for each body in the pair. Please note that these helper functions are here to provide users with accurate impulse values and are by no means mandatory. For simple use-cases, e.g. triggering effects or damage based on impulse thresholds, the single impulse value reported by the contact report should be perfectly acceptable even when local mass modification has been used. However, if local mass modification has been used and the impulse values are being used for more complex behaviors, e.g. balance control for a ragdoll, then these helper functions will most-likely be required to achieve correct behavior.</p>
+                    <p>Please note that, in the case of articulations, <b>ComputeLinearAngularImpulse</b> will return the correct impulse applied on respective articulation link. However, <b>ComputeVelocityDeltaFromImpulse</b> will not return the correct velocity changes for an articulation link because it does not take the effect of any other links of the articulation into account.</p>
+                    <p>In addition, the following considerations must be made when using local mass modification:
+                    <div class="relative">                
+                        <ul class="a">
+                            <li><p>Force thresholding for callbacks will be based on the scalar impulse value in contact reports. This was calculated using the scaled mass/inertias of the bodies so using mass scaling may require these thresholds to be re-tuned.</p></li>
+                            <li><p>Maximum impulse clamping occurs in the solver on an impulse value operating on the scaled masses/inertias. As a result, the magnitude of applied impulses calculated from <b>ComputeLinearAngularImpulse(...)</b> may exceed the <b>maxImpulse</b> in situations where mass scaling was used. In situations where uniform mass scaling was used, the magnitude of the magnitude of linear impulse will not exceed massScale * maxImpulse and angular impulse will not exceed inertiaScale * maxImpulse.</p>
+                        </ul>
+                    </div>                
+                    <p>There are a couple of special requirements for the callback due to the fact that it is coming from deep inside the <b>SDK</b>. In particular, the callback should be thread safe and reentrant. In other words, the <b>SDK</b> may call <b>OnContactModify()</b> from any thread and it may be called concurrently (i.e., asked to process sets of contact modification pairs simultaneously).</p>
+                    <p>The contact modification callback can be set from the <b>PxScene</b> inspector.</p>
+                    <img src="resources/images/documentation/Inspector - PxScene - ContactModifyCallback.png"/>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">Contact Reporting</h4>
+                    <p>It is also possible to simply have access to the contact points.</p>
+                    <p>In the same way, a callback occurs for all pairs of colliding shapes for which the user has specified the pair flag <b>PxPairFlags.NotifyContactPoints</b> in the filter shader.</p>
+                    <p>You must also specify the different types of notifications that will be sent: <b>PxPairFlags.NotifyTouchFound, .NotifyTouchPersists, .NotifyTouchLost</b>.</p>
+                    <p>To listen to these callbacks, derive from the class <b>PxSimulationEventCallback</b> and implement the function <b>OnContact</b>.</p>
+                    <p>Here is the default implementation:</p>
+                    <img src="resources/images/documentation/code/PxSimulationEventCallback.OnContact.png"/>
+                    <p>If the native pointers of the two rigid actors involved in the contact are associated with contact listeners of type <b>IPxContactListener</b>, the contact information is sent back to them for processing.</p>
+                    <p>The association of an actor handle and a contact modifier is done in two steps:</p>
+                    <img src="resources/images/documentation/code/ContactListener.ActorHandle.png"/>
+                    <p>See the demonstration scene <b><b>ContactListener_Scene</b></b> for more details.</p>
+                    <p>By default collisions between kinematic rigid bodies and kinematic and static rigid bodies will not get reported. To enable these reports use the <b>kineKineFilteringMode</b> and <b>staticKineFilteringMode</b> parameters of a <b>PxScene</b>.</p>
+                    <img src="resources/images/documentation/Inspector - PxScene - Filtering Modes.png"/>
+                    <p>Frequently, users are only interested in contact reports if the force of impact is larger than a certain threshold. This allows to reduce the amount of reported pairs which need to get processed. To take advantage of this option the following additional configurations are necessary:</p>
+                    <p>Use <b>PxPairFlags.NotifyThresholdForceFound, .NotifyThresholdForcePersists, .NotifyThresholdForceLost</b> instead of <b>.NotifyTouchFound</b> etc. in your custom <b>PxSimulationFilterShaderCallback</b>.</p>
+                    <p>Specify the threshold force for a dynamic rigid body through <b>PxRigidDynamic.ContactReportThreshold</b>. If the body collides with another object and the contact force is above the threshold, a report will get sent (if enabled according to the <b>PxPairFlags</b> setting of the pair). If two colliding dynamic bodies both have a force threshold specified then the lower threshold will be used.</p>
+                    <p>If a dynamic rigid body collides with multiple static objects, then the impact force of all those contacts will get summed up and used to compare against the force threshold. In other words, even if the impact force against each individual static object is below the threshold, the contact reports will still get sent for each pair if the sum of those forces exceeds the threshold.</p>
+                    <p><b><b>Contact Reports and CCD</b></b></p>
+                    <p>If continuous collision detection (CCD) with multiple passes is enabled, then a fast moving object might bounce on and off the same object multiple times during a single simulation step. By default, only the first impact will get reported as a <b>NotifyTouchFound</b> event in this case. To get events for the other impacts too, the <b>PxPairFlags.NotifyTouchCcd</b> has to be raised for the collision pair. This will trigger <b>NotifyTouchCcd</b> events for the non-primary impacts. For performance reasons, the system cannot always tell whether the contact pair lost touch in one of the previous CCD passes and thus can also not always tell whether the contact is new or has persisted. <b>NotifyTouchCcd</b> just reports when the two collision objects were detected as being in contact during a CCD pass.</p>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">Extracting Contact information</h4>
+                    <p>The <b>OnContact</b> simulation event permits read-only access to all contact points for a given <b>PxContactPairHandle</b>. The contact information is compressed into an appropriate format depending on certain properties, e.g. depending on the shapes involved, the properties of the contacts, materials and whether the contacts are modifiable.</p>
+                    <p>As there are a large number of combinations of different formats, <b>PhysX</b> provides two built-in mechanisms to access the contact data. The first approach provides a mechanism to extract contacts from a user buffer, as shown in the example <b>ContactListener.cs</b>, using the method <b>ExtractContacts</b> from <b>PxContactPairHandle</b>.</p>
+                    <p>This approach requires copying data to a temporary buffer in order to access it. The second approach allows the user to iterate over the contact information without extracting their own copy, but for the moment this feature is not available in this plugin.</p>
+                    <p>This approach is slightly more involved because it requires the user to not only iterate over all of the data but also consider conditions like whether the pair has been flipped or whether impulses have been reported with the pair. However, this approach of iterating over the data in-place may be more efficient because it doesn't require copying data. It will probably be included in a future update.</p>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">Continuous Collision Detection</h4>
+                    <p>When continuous collision detection (or CCD) is turned on, the affected rigid bodies will not go through other objects at high velocities (a problem also known as tunnelling). To enable CCD, three things need to be happen:</p>
+                    <ol>
+                        <li>1.	CCD needs to be turned on at scene level:</li>
+                        <img src="resources/images/documentation/Inspector - PxScene - Enable Ccd.png"/>
+                        </p>
+                        <li>2.	Pairwise CCD needs to be enabled in the pair filter:</li>
+                        <img src="resources/images/documentation/code/PxSimulationFilterShaderCallback.FilterShader.png"/>
+                        </p>
+                        <li>3.	CCD need to be enabled for each <b>PxRigidBody</b> that requires CCD:</li>
+                        <img src="resources/images/documentation/Inspector - PxRigidDynamic - Enable Ccd.png"/>
+                    </ol>
+                    <p>Once enabled, CCD only activates between shapes whose relative speeds are above the sum of their respective CCD velocity thresholds. These velocity thresholds are automatically calculated based on the shape's properties and support non-uniform scales.</p>
+                    <p><b><b>Contact Notification and Modification</b></b></p>
+                    <p>CCD supports the full set of contact notification events that are supported with the discrete collision detection.</p>
+                    <p>CCD also supports contact modification using the class <b>PxCCDContactModifyCallback</b>. The callback operates using the same semantics as the discrete collision detection contact modification callbacks.</p>
+                    <p>As with discrete collision detection, CCD will only emit contact modification events for a given pair if the user has specified the pair flag <b>PxPairFlags.ModifyContacts</b> in the filter shader.</p>
+                    <p><b><b>Triggers</b></b></p>
+                    <p>Currently, shapes flagged with <b>TriggerShape</b> will not be included in CCD. However, it is possible to get trigger events from CCD by not flagging trigger shapes as <b>TriggerShape</b> and instead configuring the filter shaders to return the following state for pairs involving trigger shapes:</p>
+                    <img src="resources/images/documentation/code/PxSimulationFilterShaderCallback.FilterShader for Triggers.png"/>
+                    <p><b><b>Tuning CCD</b></b></p>
+                    <p>The CCD should generally work without any tuning. However, there are 4 properties that can be adjusted:</p>
+                    <ol>
+                        <li>1.	<b>PxScene.CcdMaxPasses</b>:</li>
+                        <p>This parameter controls the number of CCD passes we perform. This is defaulted to 1, meaning that all objects are attempted to be updated to the TOI of their first contact. Any remaining time after the TOI of their first contact will be dropped. Increasing this value permits the CCD to run multiple passes. This reduces the likelihood of time being dropped but can increase the cost of the CCD.</p>
+                        <li>2.	<b>PxRigidBody.MinCcdAdvanceCoefficient</b></li>
+                        <p>This parameter allows you to adjust the amount by which the CCD advances objects in a given pass. By default, this value is 0.15, meaning that CCD will advance an object by the 0.15 * ccdThreshold, where ccdThreshold is a value computed per-shape that acts as a lower-bound of the maximum amount of time that could be consumed that before there is a chance that the object could have tunnelled. The default value of 0.15 improves the fluidity of motion without risking missed collisions. Reducing this value can negatively impact fluidity but will reduce the likelihood of objects clipping at the end of a frame. Increasing this value may increase the likelihood of objects tunnelling. This value should only be set in the range [0,1].</p>
+                        <li>3.	Enabling the flag <b>DisableCcdResweep</b> on the <b>PxScene</b> to disable CCD resweeps.</li>
+                        <img src="resources/images/documentation/Inspector - PxScene - Disable Ccd Resweep.png"/>
+                        <p>This can result in missed collisions as the result of ricochets but has the potential to reduce the overhead of the CCD. In general, enabling this advancement mode still guarantees that objects will not pass through the static environment but no longer guarantees that dynamic objects with CCD enabled will not pass through each-other.</p>
+                        <li>4.	Enabling the flag <b>EnableCcdFriction</b> on <b>PxRigidDynamic</b>.</li>
+                        <img src="resources/images/documentation/Inspector - PxRigidDynamic - Enable Ccd Friction.png"/>
+                        <p>Enabling this flag enables the application of friction forces in the CCD. This is disabled by default. As the CCD operates using only linear motion, enabling friction inside CCD can cause visual artefacts.</p>
+                    </ol>
+                    <p><b><b>Performance Implications</b></b></p>
+                    <p>Enabling CCD on a scene/all bodies in a scene should be relatively efficient but it will have some performance impact even when all the objects in the scene are moving relatively slowly. A great deal of effort has been put into optimizing the CCD and as a result, this additional overhead should only constitute a very small portion of the overall simulation time when the objects are moving slowly. As the objects' velocities increase, the CCD overhead will increase, especially if there are a lot of high-speed objects in close proximity. Increasing the number of CCD passes can make the CCD more expensive although the CCD will terminate early if the additional passes aren't required.</p>
+                    <p><b><b>Limitations</b></b></p>
+                    <p>The CCD system is a best-effort conservative advancement scheme. It runs a finite number of CCD substeps (defaulted to 1) and drops any remaining time. Usually, time is only dropped on high-speed objects at the moment of impact so it is not noticeable. However, this artefact can become noticeable if you simulate an object that is sufficiently small/thin relative to the simulation time-step that the object could tunnel if it was accelerated by gravity from rest for 1 frame, i.e. a paper-thin rigid body. Such an object would always be moving at above its CCD velocity threshold and could result in a large proportion of simulation time being dropped for that object and any objects in the same island as it (any objects whose bounds overlap the bounds of that object). This could cause a noticeable slow-down/stuttering effect caused by the objects in that island becoming noticeably out-of-sync with the rest of the simulation. It is therefore recommended that paper-thin/tiny objects should be avoided if possible.</p>
+                    <p>It is also recommended that you filter away CCD interactions between bodies that are constrained together, e.g. limbs in the same ragdoll. Allowing CCD interactions between limbs of the same ragdoll could increase the cost of CCD and also potentially cause time to be dropped unnecessarily. CCD interactions are automatically disabled between links in an articulation.</p>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">Raycast CCD</h4>
+                    <p>The <b>PhysX</b> SDK supports an alternative CCD implementation based on simple raycasts. Contrary to the built-in CCD algorithm implemented within the <b>PhysX SDK</b>, this cheaper and simpler alternative version is fully implemented outside of the <b>SDK</b> itself.</p>
+                    <p>After the traditional <b>Simulate/FetchResults</b> calls, the system performs raycasts from the shapes' center positions to double-check that they did not tunnel. If tunnelling is detected for an object, it is moved back to a previous position along the ray, in an overlap position. Then next frame, the <b>SDK</b>'s contact generation takes over and generates a convincing motion. There are some subtle details not described here, but this is how it works in a nutshell.</p>
+                    <p>Since it is raycast-based, the solution is not perfect. In particular, small dynamic objects can still go through the static world if the ray goes through a crack between edges, or a small hole in the world (like the keyhole from a door). Also, dynamic-vs-dynamic CCD is very approximate. It only works well for fast-moving dynamic objects colliding against slow-moving dynamic objects. Other known limitations are that it is currently only implemented for <b>PxRigidDynamic</b> objects (not for <b>PxArticulationLink</b>), and for simple actors with one shape (not for "compounds").</p>
+                    <p>However the implementation should be able to prevent important objects from leaving the world, provided the world is watertight. The code is very small, easy to follow or modify, and its performance is often better overall than for the built-in CCD. So it can be a valuable alternative if the default CCD becomes too expensive.</p>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">Speculative CCD</h4>
+                    <p>In addition to sweep-based CCD, <b>PhysX</b> also provides a cheaper but less robust approach called speculative CCD. This approach functions differently to the sweep-based CCD in that it operates entirely as part of the discrete simulation by inflating contact offsets based on object motion and depending on the constraint solver to ensure that objects do not tunnel through each-other.</p>
+                    <p>This approach generally works well and, unlike the sweep-based CCD, it is legal to enable speculative CCD on kinematic actors. However, there are cases where it can fail to ensure objects do not pass through each-other. As an example, if the constraint solver accelerates an actor (as a result of a collision or joint) such that the actor passes entirely through objects during that time-step, speculative CCD can result in tunneling.</p>
+                    <p>To enable this feature, raise the <b>EnableSpeculativeCcd</b> flag on the rigid body that requires CCD:</p>
+                    <img src="resources/images/documentation/Inspector - PxRigidDynamic - Enable Speculative Ccd.png"/>
+                    <p>Unlike the sweep-based CCD, this form of CCD does not require settings to be raised on either the scene or on the pair in the filter shader.</p>
+                    <p>Note that this approach works best with PCM collision detection. It may not function as well if the legacy SAT-based collision detection approach is used.</p>
+                    <p>This feature can work in conjunction with the sweep-based CCD, e.g. if a fast-moving kinematic has speculative CCD enabled but dynamic rigid bodies use sweep-based CCD. However, if speculative CCD is used on kinematics in conjunction with sweep-based CCD, it is important to ensure that interactions between the kinematic actor using speculative contacts and the CCD-enabled dynamic actors do not also enable sweep-based CCD interactions otherwise the sweep-based CCD may overrule the speculative CCD, leading to poor behavior.</p>
+                </section>
+                <section class="js_section">
+                    <h4 class="section_title">Persistent Contact Manifold (PCM)</h4>
+                    <p>The <b>PhysX SDK</b> provides two types of collision detection:</p>
+                    <ol>
+                        <li>1.	Default collision detection</li>
+                        <p>The default collision detection system uses a mixture of SAT (Separating Axis Theorem) and distance-based collision detection to generate full contact manifolds. It generates all the potential contacts in one frame, so it lends itself better to stable stacking. This approach is stable for small contact offsets and rest offsets but may not generate the correct contact points when large offsets are used because it approximates the contact points in these situations by plane shifting.</p>
+                        <li>2.	Persistent Contact Manifold (PCM)</li>
+                        <p>PCM is a fully distance-based collision detection system. PCM generates a full manifold of contacts when two shapes first come into contact. It recycles and updates the existing contacts from the previous frame in the manifold and then it generates a new contact in the subsequent frame if the shapes move relative to each-other more than a threshold amount or if a contact was dropped from the manifold. If too many contacts are dropped from the manifold due to a large amount of relative motion in a frame, then full manifold generation is re-run. This approach is quite efficient in terms of performance and memory. However, because PCM potentially generates fewer contacts than the default collision detection, it might reduce stacking stability when simulating tall stacks with insufficient solver iterations. As this approach is distance-based, it will generate the correct contact points for arbitrary contact offsets/rest offsets.</p>
+                        <p>To enable PCM, set the flag in the <b>PxScene</b> inspector:</p>
+                        <img src="resources/images/documentation/Inspector - PxScene - Enable PCM.png"/>
+                    </ol>
+                </section>
 
-    </article>
-</div>
-<div id="footer">
-    <div class="container"> <br/>
-        <p id="copyright">&copy; Copyright 2021 - Ev4sio. All rights reserved.</p>
-        <a href="index.html" id="footer_logo">Ev4sio</a>
+            </article>
     </div>
-</div>
-<script src="resources/js/scrolling.js"></script>
+    <div id="footer">
+        <div class="container">
+            <p id="copyright">&copy; Copyright 2021 - Ev4sio. All rights reserved.</p>
+            <a href="index.html" id="footer_logo">Ev4sio</a>
+        </div>
+    </div>
+    <script src="resources/js/scrolling.js"></script>
 </body>
 </html>
