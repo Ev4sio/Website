@@ -34,36 +34,37 @@
     <div id="main_content">
             <div class="nav">
                 <ul>
-                    <li class="js_button selected">Get Started</li>
+                    <li class="js_button selected"><b>Get Started</b></li>
                     <ol>
                         <li class="js_button">Ev4sio Window</li>
+
                     </ol>
-                    <li class="js_button">PxManager Singleton</li>
-                    <li class="js_button">Default Assets</li>
+                    <li class="js_button"><b>PxManager Singleton</b></li>
+                    <li class="js_button"><b>Default Assets</b></li>
                     <ol>
                         <li class="js_button">PxDefaultAllocator</li>
                         <li class="js_button">PxDefaultCpuDispatcher</li>
                         <li class="js_button">PxDefaultMaterial</li>
                         <li class="js_button">PxDefaultScene</li>
                     </ol>
-                    <li class="js_button">Scene Manager</li>
-                    <li class="js_button">Rigid Actors</li>
+                    <li class="js_button"><b>Scene Manager</b></li>
+                    <li class="js_button"><b>Rigid Actors</b></li>
                     <ol>
                         <li class="js_button">PxRigidStatic</li>
                         <li class="js_button">PxRigidDynamic</li>
                         <li class="js_button">PxArticulationLink</li>
                     </ol>
-                    <li class="js_button">Shape and Geometries</li>
-                    <li class="js_button">Joints</li>
-                    <li class="js_button">Custom Joints</li>
-                    <li class="js_button">Aggregates</li>
-                    <li class="js_button">Articulations</li>
+                    <li class="js_button"><b>Shape and Geometries</b></li>
+                    <li class="js_button"><b>Joints</b></li>
+                    <li class="js_button"><b>Custom Joints</b></li>
+                    <li class="js_button"><b>Aggregates</b></li>
+                    <li class="js_button"><b>Articulations</b></li>
                     <ol>
                         <li class="js_button">Maximal Coordinate Articulations</li>
                         <li class="js_button">Reduced Coordinate Articulation</li>
                     </ol>
-                    <li class="js_button">Character Controllers</li>
-                    <li class="js_button">Advanced Collision Detection</li>
+                    <li class="js_button"><b>Character Controllers</b></li>
+                    <li class="js_button"><b>Advanced Collision Detection</b></li>
                     <ol>
                         <li class="js_button">Tuning Shape Collision Behavior</li>
                         <li class="js_button">Contact Modification</li>
@@ -74,7 +75,7 @@
                         <li class="js_button">Speculative CCD</li>
                         <li class="js_button">Persistent Contact Manifold (PCM)</li>
                     </ol>
-                    <li class="js_button">Vehicles</li>
+                    <li class="js_button"><b>Vehicles</b></li>
                 </ul>
             </div>
             <article class="content">
@@ -136,7 +137,7 @@
                     <h4 class="section_title">PxDefaultAllocator</h4>
                     <p>This is the default implementation of the allocator interface required by the PhysX SDK. </p>
                     <img src="resources/images/documentation/Inspector - PxDefaultAllocator.png"/>
-                    <p><b><b>AreComponentsInstantiated</b></b> indicates if the components which are necessary for this asset have been instantiated. You will see this flag on all the elements that depend on other associated components,such as, for example, native instances of the <b>PhysX</b> API, which are accessible through <b>handles</b>.</p>
+                    <p><b><b>AreComponentsInstantiated</b></b> indicates if the components which are necessary for this asset have been instantiated. You will see this flag on all the elements that depend on other associated components, such as, for example, native instances of the <b>PhysX</b> API, which are accessible through <b>handles</b>.</p>
                     <p><b><b>DisplayDataAllocationInfo</b></b> allows you to display information about the allocations made in <b>PhysX</b>.</p>
                 </section>        
                 <section class="js_section">
@@ -244,12 +245,12 @@
                     <p>PhysX supports six different joint types:
                     <div class="relative">                
                         <ul class="a">
-                            <li><p>A fixed joint locks the orientations and origins rigidly together</p></li>
-                            <li><p>A distance joint keeps the origins within a certain distance range</p>
-                            <li><p>A spherical joint (also called a <b>ball-and-socket</b>) keeps the origins together, but allows the orientations to vary freely.</p>
-                            <li><p>A revolute joint (also called a <b>hinge</b>) keeps the origins and x-axes of the frames together, and allows free rotation around this common axis.</p>
-                            <li><p>A prismatic joint (also called a <b>slider</b>) keeps the orientations identical, but allows the origin of each frame to slide freely along the common x-axis.</p>
-                            <li><p>A D6 joint is a highly configurable joint that allows specification of individual degrees of freedom either to move freely or be locked together. It can be used to implement a wide variety of mechanical and anatomical joints, but is somewhat less intuitive to configure than the other joint types.</p>
+                            <li>A fixed joint locks the orientations and origins rigidly together</li>
+                            <li>A distance joint keeps the origins within a certain distance range</li>
+                            <li>A spherical joint (also called a <b>ball-and-socket</b>) keeps the origins together, but allows the orientations to vary freely.</li>
+                            <li>A revolute joint (also called a <b>hinge</b>) keeps the origins and x-axes of the frames together, and allows free rotation around this common axis.</li>
+                            <li>A prismatic joint (also called a <b>slider</b>) keeps the orientations identical, but allows the origin of each frame to slide freely along the common x-axis.</li>
+                            <li>A D6 joint is a highly configurable joint that allows specification of individual degrees of freedom either to move freely or be locked together. It can be used to implement a wide variety of mechanical and anatomical joints, but is somewhat less intuitive to configure than the other joint types.</li>
                         </ul>
                     </div>                
                     <p>The official documentation provides much more detailed information on each type of joint.</p>

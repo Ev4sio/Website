@@ -17,7 +17,6 @@
   box-sizing: border-box;
   margin-top: 40px;
   overflow-y: scroll;
-  border-right: 1px solid var(--secondary-color);
 }
 .nav-2::-webkit-scrollbar-track {
   border-radius: 10px;
@@ -52,7 +51,6 @@
   color: var(--contrast-color);
   font-weight: 400;
   cursor: pointer;
-  font-weight: bold;
 }
 .nav .selected {
   color: var(--secondary-color);
