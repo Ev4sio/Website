@@ -7,6 +7,8 @@
 <link rel="stylesheet" type="text/css" href="resources/css/reset.css"/>
 <link rel="stylesheet" type="text/css" href="resources/css/common.css"/>
 <link rel="stylesheet" type="text/css" href="resources/css/documentation.css"/>
+<link rel="icon" href="resources/images/favicon.ico" />
+
 </head>
 <body>
     <div id="header">
@@ -118,7 +120,7 @@
                     <p>Use the <b><b>Minimal Additional Components</b></b> parameter to avoid linking the code of some <b>PhysX</b> features that are not always used in order to save memory. Currently the optional features are the articulations and the height fields. By default this flag is disabled and you can use these features.</p>
                     <p>The <b><b>Use Vehicle Library</b></b> checkbox allows the use of the vehicle module. This module is described in the <b>Vehicles</b> section. By default the flag is disabled so you cannot use vehicles.</p>
                     <p>With the <b><b>Use Visual Debugger</b></b> checkbox you can visualize, debug and profile your simulation using the <b>PhysX Visual Debugger</b>. But for that you must first have installed and launched the application:
-                    <a href="https://developer.nvidia.com/physx-visual-debugger">https://developer.nvidia.com/physx-visual-debugger</a></p>
+                    <a href="https://developer.nvidia.com/physx-visual-debugger" target="_blank">https://developer.nvidia.com/physx-visual-debugger</a></p>
                     <img src="resources/images/documentation/Inspector - PxManager - Visual Debugger.png"/>
                     <p>This tool provides a graphical view of the <b>PhysX</b> scene and includes various tools to inspect and visualize variables of every <b>PhysX</b> object. Additionally it can also record and visualize memory and timing data. You can refer to its detailed built-in help for more information on the usage of the GUI.</p>
                     <p>For the display to match that of <b>Unity</b>, you need to set the <b>Chirality</b> parameter to <b>Left-Handed</b>.</p>
@@ -160,7 +162,7 @@
                     <p>Then there is a set of callbacks, most of which are optional. They are all of type <b>ScriptableObject</b>. We can see three default callbacks.</p>
                     <img src="resources/images/documentation/Inspector - PxDefaultScene 2.png"/>
                     <p>The documentation will try to detail these different settings but you can also refer to the official documentation provided by <b>NVidia</b>.</p>
-                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/API.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/API.html</a></p>
+                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/API.html" target="_blank">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/API.html</a></p>
                 </section>        
                 <section class="js_section">
                     <h3 class="section_title">Scene Manager</h3>
@@ -178,7 +180,7 @@
                     <p>The rigid actors are the elements that are associated with shapes allowing them to collide with their environment.</p>
                     <img src="resources/images/documentation/PxActor.png"/>
                     <p>You can easily see the correspondence with the original architecture:</p>
-                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/RigidBodyOverview.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/RigidBodyOverview.html</a></p>             
+                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/RigidBodyOverview.html" target="_blank">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/RigidBodyOverview.html</a></p>             
                 </section>
                 <section class="js_section">
                     <h4 class="section_title">PxRigidStatic</h4>
@@ -218,7 +220,7 @@
                     <p>There are two categories of shapes.</p>
                     <p>The primitives (<b>PxBoxGeometry, PxCapsuleGeometry, PxPlaneGeometry</b> and <b>PxSphereGeometry</b>) which contain all of the data.</p>
                     <p>The meshes or height fields (<b>PxConvexMeshGeometry, PxTriangleMeshGeometry</b> and <b>PxHeightFieldGeometry</b>) for whom the data is contained in a much larger object (<b>PxConvexMesh, PxTriangleMesh</b> and <b>PxHeightField</b> respectively). You can use these objects with different scales in each <b>PxShape</b> type which references them.</p>
-                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Geometry.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Geometry.html</a></p>
+                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Geometry.html" target="_blank">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Geometry.html</a></p>
                     <p>Once again, there is a simple way to create a shape and automatically associate it with an actor. For this you have to right click on a game object already containing an actor component.</p>
                     <img src="resources/images/documentation/Hierarchy - Add PxShape.png"/>
                     </p>
@@ -251,7 +253,7 @@
                         </ul>
                     </div>                
                     <p>The official documentation provides much more detailed information on each type of joint.</p>
-                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Joints.html">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Joints.html</a></p>
+                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Joints.html" target="_blank">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/Joints.html</a></p>
                     <p>The string-damper joint available in the sources of <b>Ev4sio.Physics</b> gives an example of implementation with the combination of two joints, and shows how the Assets and Native layers work together.</p>
                 </section>
                 <section class="js_section">
@@ -366,9 +368,9 @@
                     <p>In addition to modifying contact properties, it is possible to:
                     <div class="relative">                
                         <ul class="a">
-                            <li><p>Set target velocities for each contact.</p></li>
-                            <li><p>Limit the maximum impulse applied at each contact.</p></li>
-                            <li><p>Adjust inverse mass and inverse inertia scales separately for each body.</p>
+                            <li>Set target velocities for each contact.</li>
+                            <li>Limit the maximum impulse applied at each contact.</li>
+                            <li>Adjust inverse mass and inverse inertia scales separately for each body.</li>
                         </ul>
                     </div>
                     <p>Conveyor belt-like effects can be achieved by setting target velocities. Best results are achieved by having target velocities running in tangential directions to the contact normal but the solver does also support target velocities in the direction of the contact normal.</p>
@@ -382,8 +384,8 @@
                     <p>In addition, the following considerations must be made when using local mass modification:
                     <div class="relative">                
                         <ul class="a">
-                            <li><p>Force thresholding for callbacks will be based on the scalar impulse value in contact reports. This was calculated using the scaled mass/inertias of the bodies so using mass scaling may require these thresholds to be re-tuned.</p></li>
-                            <li><p>Maximum impulse clamping occurs in the solver on an impulse value operating on the scaled masses/inertias. As a result, the magnitude of applied impulses calculated from <b>ComputeLinearAngularImpulse(...)</b> may exceed the <b>maxImpulse</b> in situations where mass scaling was used. In situations where uniform mass scaling was used, the magnitude of the magnitude of linear impulse will not exceed massScale * maxImpulse and angular impulse will not exceed inertiaScale * maxImpulse.</p>
+                            <li>Force thresholding for callbacks will be based on the scalar impulse value in contact reports. This was calculated using the scaled mass/inertias of the bodies so using mass scaling may require these thresholds to be re-tuned.</li>
+                            <li>Maximum impulse clamping occurs in the solver on an impulse value operating on the scaled masses/inertias. As a result, the magnitude of applied impulses calculated from <b>ComputeLinearAngularImpulse(...)</b> may exceed the <b>maxImpulse</b> in situations where mass scaling was used. In situations where uniform mass scaling was used, the magnitude of the magnitude of linear impulse will not exceed massScale * maxImpulse and angular impulse will not exceed inertiaScale * maxImpulse.</li>
                         </ul>
                     </div>                
                     <p>There are a couple of special requirements for the callback due to the fact that it is coming from deep inside the <b>SDK</b>. In particular, the callback should be thread safe and reentrant. In other words, the <b>SDK</b> may call <b>OnContactModify()</b> from any thread and it may be called concurrently (i.e., asked to process sets of contact modification pairs simultaneously).</p>
@@ -492,10 +494,8 @@
             </article>
     </div>
     <div id="footer">
-        <div class="container">
             <p id="copyright">&copy; Copyright 2021 - Ev4sio. All rights reserved.</p>
             <a href="index.html" id="footer_logo">Ev4sio</a>
-        </div>
     </div>
     <script src="resources/js/scrolling.js"></script>
 </body>
