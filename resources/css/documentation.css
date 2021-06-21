@@ -5,26 +5,17 @@
   --white-color: #fafbfc;
 }
 
-html {
-  scroll-padding-top: 2000px;
-}
-
 #main_content {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  display: grid;
+  grid-template-columns: 30% 70%;
 }
 .nav {
-  max-width: 250px;
-  height: 100%;
+  position: sticky;
+  top: 120px;
+  height: 85vh;
+  box-sizing: border-box;
   margin-top: 24px;
-  padding-right: 80px;
-  position: fixed;
-  left: 20%;
   overflow-y: scroll;
-  overflow-x: hidden;
-  padding-bottom: 260px;
-  scroll-padding-top: 200px;
 }
 .nav-2::-webkit-scrollbar-track {
   border-radius: 10px;
@@ -42,35 +33,35 @@ html {
   padding-left: 0;
   line-height: 1.5;
 }
-
 .nav ol {
   list-style: none;
   padding-left: 20px;
   line-height: 1.2;
 }
 .nav li:hover {
-  color: var(--contrast-color);
+  color: var(--secondary-color);
   cursor: pointer;
   transition: color 0.3s ease-in-out;
 }
 .nav .selected {
-  color: var(--contrast-color);
+  color: var(--secondary-color);
   position: relative;
+  font-weight: bolder;
 }
 .nav .selected:after {
   position: absolute;
   content: "";
   width: 1rem;
   height: 1rem;
-  background-color: var(--contrast-color);
+  background-color: var(--secondary-color);
   left: -1.5rem;
   top: 0.3rem;
 }
 .content {
-  max-width: 70%;
+  margin-left: 24px;
 }
 .content img {
-  max-width: 550px;
+  max-width: 100%;
   border: 2px solid var(--secondary-color);
 }
 @media (max-width: 750px) {

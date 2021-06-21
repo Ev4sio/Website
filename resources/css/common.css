@@ -15,7 +15,6 @@ body {
   min-height: 100%;
   margin: 0 auto;
   position: relative;
-  overflow-x: hidden;
   scrollbar-width: thin;
   scrollbar-color: var(--secondary-color) transparent;
 }
