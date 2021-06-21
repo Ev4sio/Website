@@ -502,6 +502,13 @@ ul li::before {
   margin-left: -1em;
 }
 
+/* Contact style */
+.contact_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1024px) {
   html {
     --padding: 8%;
