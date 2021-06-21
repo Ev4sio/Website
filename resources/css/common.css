@@ -110,6 +110,7 @@ div.relative {
 }
 .main_menu_first:hover {
   border-bottom: 5px solid var(--contrast-color);
+  color: var(--primary-color);
 }
 .with_dropdown {
   position: relative;
