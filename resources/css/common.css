@@ -4,6 +4,9 @@
   --contrast-color: #ee750b;
   --white-color: #fafbfc;
 }
+html {
+  --padding: 20%;
+}
 /* ----- General Styling ----- */
 html,
 body {
@@ -17,6 +20,7 @@ body {
   position: relative;
   scrollbar-width: thin;
   scrollbar-color: var(--secondary-color) transparent;
+  word-break: break-word;
 }
 
 body::-webkit-scrollbar-track {
@@ -38,7 +42,7 @@ body::-webkit-scrollbar-thumb {
 #header,
 #footer,
 #main_content {
-  padding: 24px 20%;
+  padding: 24px var(--padding);
 }
 
 /* ----- Header Styling ----- */
@@ -90,6 +94,12 @@ div.relative {
 .first_list {
   float: left;
   margin: 0 14px;
+}
+#main_menu ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
 }
 .main_menu_first {
   color: var(--primary-color);
@@ -147,11 +157,13 @@ div.relative {
   border-bottom: 5px solid var(--contrast-color);
 }
 /* ----- Slideshow Styling ----- */
+#slideshow_area {
+  padding-top: 92px;
+}
 #slideshow_area .img_banner {
-  height: 240px;
-  width: 100vw;
+  width: 100%;
+  height: 200px;
   object-fit: cover;
-  margin-left: -35%;
 }
 #slideshow_container {
   position: relative;
@@ -167,7 +179,7 @@ div.relative {
   font-size: 60px;
   line-height: 73px;
   text-align: right;
-  padding-top: 24px;
+  padding: 24px var(--padding);
 }
 .img_prez {
   display: flex;
@@ -195,6 +207,7 @@ div.relative {
   font-weight: bold;
   font-size: 20px;
   line-height: 24px;
+  margin-right: var(--padding);
 }
 #cta_unity img {
   width: 40px;
@@ -418,51 +431,7 @@ nav {
 .menu_item.toggle {
   display: none;
 }
-/* table */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  transition: color 0.3s ease-out;
-  margin-bottom: 2rem;
-}
-table td,
-table th {
-  border: 1px solid var(--white-color);
-  padding: 0.8rem;
-  font-weight: 300;
-}
-table th {
-  text-align: left;
-  background-color: white;
-  border-color: white;
-  border-bottom-color: var(--white-color);
-}
-table td:first-child {
-  background-color: var(--white-color);
-  font-weight: 600;
-}
-@media screen and (max-width: 600px) {
-  nav {
-    grid-template-columns: 70px auto;
-  }
-  .menu_item {
-    display: none;
-  }
-  .menu_item.toggle {
-    display: inline-block;
-  }
-  .menu {
-    text-align: right;
-    padding: 0.5rem 1rem;
-  }
-  .toggle {
-    display: block;
-  }
-  .menu.responsive .menu_item:not(:first-child) {
-    display: block;
-    padding: 0 0 0.5rem 0;
-  }
-}
+
 /* layout */
 #main_content {
   padding-top: 92px;
@@ -476,6 +445,9 @@ table td:first-child {
   100% {
     transform: translate3d(0, 0, 0);
   }
+}
+#introduction {
+  margin-top: -92px;
 }
 /* ----- Footer Styling ----- */
 #footer {
@@ -528,4 +500,31 @@ ul li::before {
   display: inline-block;
   width: 1em;
   margin-left: -1em;
+}
+
+@media screen and (max-width: 1024px) {
+  html {
+    --padding: 8%;
+  }
+}
+@media screen and (max-width: 768px) {
+  html {
+    --padding: 4%;
+  }
+  html,
+  body,
+  .nav ul,
+  .nav ol,
+  .nav li {
+    font-size: 16px !important;
+    line-height: 20px !important;
+  }
+  h1,
+  .main_menu_first {
+    font-size: 16px;
+  }
+  ul li::before {
+    content: "";
+    margin-left: 0;
+  }
 }
