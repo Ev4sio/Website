@@ -7,7 +7,7 @@
 
 #main_content {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 20% 80%;
   box-sizing: border-box;
 }
 .nav {
@@ -69,10 +69,10 @@
   top: 0.3rem;
 }
 .content {
-  margin-left: 24px;
+  margin-left: 20px;
 }
 .content img {
-  max-width: 100%;
+  max-width: 125%;
   border: 2px solid var(--secondary-color);
   background-color: var(--white-color);
   display: block;

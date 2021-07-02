@@ -34,37 +34,37 @@
     <div id="main_content">
             <div class="nav">
                 <ul>
-                    <li class="js_button selected"><b>Legal Info and Links</b></li>
-                    <li class="js_button"><b>Get Started</b></li>
+                    <li class="js_button selected">Legal Info and Links</li>
+                    <li class="js_button">Get Started</li>
                     <ol>
                         <li class="js_button">Ev4sio Window</li>
                     </ol>
-                    <li class="js_button"><b>PxManager Singleton</b></li>
-                    <li class="js_button"><b>Default Assets</b></li>
+                    <li class="js_button">PxManager Singleton</li>
+                    <li class="js_button">Default Assets</li>
                     <ol>
                         <li class="js_button">PxDefaultAllocator</li>
                         <li class="js_button">PxDefaultCpuDispatcher</li>
                         <li class="js_button">PxDefaultMaterial</li>
                         <li class="js_button">PxDefaultScene</li>
                     </ol>
-                    <li class="js_button"><b>Scene Manager</b></li>
-                    <li class="js_button"><b>Rigid Actors</b></li>
+                    <li class="js_button">Scene Manager</li>
+                    <li class="js_button">Rigid Actors</li>
                     <ol>
                         <li class="js_button">PxRigidStatic</li>
                         <li class="js_button">PxRigidDynamic</li>
                         <li class="js_button">PxArticulationLink</li>
                     </ol>
-                    <li class="js_button"><b>Shape and Geometries</b></li>
-                    <li class="js_button"><b>Joints</b></li>
-                    <li class="js_button"><b>Custom Joints</b></li>
-                    <li class="js_button"><b>Aggregates</b></li>
-                    <li class="js_button"><b>Articulations</b></li>
+                    <li class="js_button">Shape and Geometries</li>
+                    <li class="js_button">Joints</li>
+                    <li class="js_button">Custom Joints</li>
+                    <li class="js_button">Aggregates</li>
+                    <li class="js_button">Articulations</li>
                     <ol>
                         <li class="js_button">Maximal Coordinate Articulations</li>
                         <li class="js_button">Reduced Coordinate Articulation</li>
                     </ol>
-                    <li class="js_button"><b>Character Controllers</b></li>
-                    <li class="js_button"><b>Advanced Collision Detection</b></li>
+                    <li class="js_button">Character Controllers</li>
+                    <li class="js_button">Advanced Collision Detection</li>
                     <ol>
                         <li class="js_button">Tuning Shape Collision Behavior</li>
                         <li class="js_button">Contact Modification</li>
@@ -75,8 +75,8 @@
                         <li class="js_button">Speculative CCD</li>
                         <li class="js_button">Persistent Contact Manifold (PCM)</li>
                     </ol>
-                    <li class="js_button"><b>Vehicles</b></li>
-                    <li class="js_button"><b>Conclusion</b></li>
+                    <li class="js_button">Vehicles</li>
+                    <li class="js_button">Conclusion</li>
                 </ul>
             </div>
             <article class="content">
@@ -531,8 +531,12 @@
                     <p>As for the controller you can use it as an example to write your own inputs system.</p>
                     </br>
                     <p>The wheels also have components associated with them.</p>
-                    <img src="resources/images/documentation/Inspector - PxVehicleWheel.png"/>
+                    <img src="resources/images/documentation/Hierarchy - Controller Parent Anchor.png"/>
                     <p>Each wheel has a convex mesh geometry and a <i>PxVehicleWheel</i> component which contains its various parameters. However, there is no need to make any settings here, since they are accessible via the <i>PxVehicleDrive4W</i> component of the chassis.</p>
+                    </br>
+                    <p>As indicated in the paragraph dedicated to the character controllers, it is possible to define a dummy relative to the vehicle on which a controller can position itself as a child. To do this, simply add a game object with the prefix <i>P_</i> (for <i>Parent</i>) to the vehicle hierarchy and position it as desired.</p>
+                    <img src="resources/images/documentation/Hierarchy - Controller Parent Output Anchor.png"/>
+                    <p>In the same way, it is also recommended to add a game object prefixed by <i>PO_</i> (for <i>Parent Output</i>) to indicate the output position of the controller when you want to exit the vehicle, in order to avoid interpenetrations.</p>
                 </section>
                 <section class="js_section">
                     <h3 class="section_title">Conclusion</h3>
