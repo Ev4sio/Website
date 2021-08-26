@@ -328,18 +328,20 @@
                 </section>
                 <section class="js_section">
                     <h3 class="section_title">Character Controllers</h3>
-                    <p>You can add kinematic controllers to your scene. There are two different types, <b><b>PxBoxController</b></b> and <b><b>PxCapsuleController</b></b> which are created as normal <i>Unity</i> components.</p>
+                    <p>You can add kinematic controllers to your scene. For this you must combine two different components. A first one which mainly manages collisions and can be of two different types, <b><b>PxBoxController</b></b> and <b><b>PxCapsuleController</b></b>, which derive from a <i>PxController</i> component.</p>
                     <img src="resources/images/documentation/Inspector - Add Component PxCapsuleController.png"/>
-                    <p>A character controller is responsible for controlling the physics of a character. You can manage its movements, speed, the height of its jumps, the gravity that applies to it. You can make it collide with the environment or filter some collisions. You can even make it grab a <i>PxActor</i>.</p>
+                    </p>
                     <img src="resources/images/documentation/Inspector - PxCapsuleController Settings 1.png"/>
-                    <p>The first parameters are used to adjust the movement speed, expressed in meters per second. The orientation is defined by two vectors: the <b><b>Up</b></b> and <b><b>Forward</b></b> vectors. They are adjustable during the play mode.</p>
+                    <p>This component is responsible for controlling the physics of the character. The orientation is defined by the <b><b>Up</b></b> and <b><b>Forward</b></b> vectors. They are adjustable during the play mode. The official documentation provides more information on this part of the controller.</p>
+                    <a href="https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/CharacterControllers.html" target="_blank">https://gameworksdocs.nvidia.com/PhysX/4.1/documentation/physxguide/Manual/CharacterControllers.html</a></p>
+                    <p>With this first component it is necessary to associate a second one, which rather concerns the game programming aspect of the controller. There is currently only the <b><b>FirstPersonController</b></b> type in the plugin, which derives from a <i>BaseController</i> component.</p>
+                    <img src="resources/images/documentation/Inspector - PxCapsuleController Settings 2.png"/>
+                    <p>The first parameters are used to adjust the movement speed, expressed in meters per second.</p>
                     <p><b><b>Max Pitch Angle</b></b> limits the pitch angle so that the forward direction cannot be completely vertical.</p>
-                    <p><b><b>Inputs</b></b> is a data container of type <i>PxControllerInputs</i>. By default the controllers use the component <i>PxDefaultControllerInputs</i> which was automatically created in the <i>PxAssets</i> directory.</p>
-                    <img src="resources/images/documentation/Inspector - PxDefaultControllerInputs.png"/>
-                    <p>It uses the keyboard / mouse combination but you can use it as an example to write your own inputs system.</p>
-                    <p>Here is an overview of the settings of a <i>PxController</i>.</p>
-                    <img src="resources/images/documentation/Inspector - PxController Settings.png"/>
-                    <p>A controller can also grab actors. Here are the settings for this feature.</p>
+                    <p><b><b>Inputs</b></b> is another component, of type <i>BaseControllerInputs</i>. As its name suggests, it is used specifically to manage inputs. By default you must add the component <b><b>DefaultControllerInputs</b></b> to your character game object.</p>
+                    <img src="resources/images/documentation/Inspector - DefaultControllerInputs.png"/>
+                    <p>It uses the keyboard / mouse combination but you can create your own inputs component by making it inherit from <i>BaseControllerInputs</i>.</p>
+                    <p>A <b><b>BaseController</b></b> component can also grab actors if certain conditions are met. Here are the settings for this feature.</p>
                     <img src="resources/images/documentation/Inspector - PxController Actor Grabbing.png"/>
                     <p><b><b>Max Distance</b></b> defines the maximum distance at which the actor can be grabbed.</p>
                     <p><b><b>Enable Collision</b></b> indicates whether the grabbed actor can collide or not.</p>
@@ -526,8 +528,8 @@
                     <p>Second, since the meshes are also duplicated, we can modify them without altering the source model. For example the vertices of a wheel will be modified so that their origin corresponds to the center of the wheel. We can also imagine that in the future we will be able to generate deformations without worrying about the consequences.</p>
                     <p>We can notice that different components have been added compared to the initial game object. The chassis has both a <i>PxRigidDynamic</i> component with associated convex mesh geometry, like a classic rigid actor, and also a <i>PxVehicleDrive4W</i> component. It is this component that contains the various settings of the vehicle.</p>
                     <p>You can adjust the mass of the chassis. You can see the list of wheels and axles. The <b><b>Wheel Query Type</b></b> parameter allows you to choose whether you want to perform raycast or sweep query to position the wheels on the ground.</p>
-                    <p><b><b>Inputs</b></b> is a data container of type <i>PxVehicleDriveInputs</i>. By default the vehicles use the component <i>PxDefaultVehicleDriveInputs</i> which was automatically created in the <i>PxAssets</i> directory.</p>
-                    <img src="resources/images/documentation/Inspector - PxDefaultVehicleDriveInputs.png"/>
+                    <p><b><b>Inputs</b></b> is a component of type <i>BaseVehicleDriveInputs</i>. In the same way as for the character controllers, this component allows you to specifically manage the inputs. By default the vehicles use the component <i>DefaultVehicleDriveInputs</i>.</p>
+                    <img src="resources/images/documentation/Inspector - DefaultVehicleDriveInputs.png"/>
                     <p>As for the controller you can use it as an example to write your own inputs system.</p>
                     </br>
                     <p>The wheels also have components associated with them.</p>
