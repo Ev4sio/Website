@@ -338,8 +338,8 @@
                     <img src="resources/images/documentation/Inspector - PxCapsuleController Settings 2.png"/>
                     <p>The first parameters are used to adjust the movement speed, expressed in meters per second.</p>
                     <p><b><b>Max Pitch Angle</b></b> limits the pitch angle so that the forward direction cannot be completely vertical.</p>
-                    <p><b><b>Inputs</b></b> is another component, of type <i>BaseControllerInputs</i>. As its name suggests, it is used specifically to manage inputs. By default you must add the component <b><b>DefaultControllerInputs</b></b> to your character game object.</p>
-                    <img src="resources/images/documentation/Inspector - DefaultControllerInputs.png"/>
+                    <p><b><b>Inputs</b></b> is another component, of type <i>BaseControllerInputs</i>. As its name suggests, it is used specifically to manage inputs. By default you must add the component <b><b>ControllerInputs</b></b> to your character game object.</p>
+                    <img src="resources/images/documentation/Inspector - ControllerInputs.png"/>
                     <p>It uses the keyboard / mouse combination but you can create your own inputs component by making it inherit from <i>BaseControllerInputs</i>.</p>
                     <p>A <b><b>BaseController</b></b> component can also grab actors if certain conditions are met. Here are the settings for this feature.</p>
                     <img src="resources/images/documentation/Inspector - PxController Actor Grabbing.png"/>
@@ -528,8 +528,8 @@
                     <p>Second, since the meshes are also duplicated, we can modify them without altering the source model. For example the vertices of a wheel will be modified so that their origin corresponds to the center of the wheel. We can also imagine that in the future we will be able to generate deformations without worrying about the consequences.</p>
                     <p>We can notice that different components have been added compared to the initial game object. The chassis has both a <i>PxRigidDynamic</i> component with associated convex mesh geometry, like a classic rigid actor, and also a <i>PxVehicleDrive4W</i> component. It is this component that contains the various settings of the vehicle.</p>
                     <p>You can adjust the mass of the chassis. You can see the list of wheels and axles. The <b><b>Wheel Query Type</b></b> parameter allows you to choose whether you want to perform raycast or sweep query to position the wheels on the ground.</p>
-                    <p><b><b>Inputs</b></b> is a component of type <i>BaseVehicleDriveInputs</i>. In the same way as for the character controllers, this component allows you to specifically manage the inputs. By default the vehicles use the component <i>DefaultVehicleDriveInputs</i>.</p>
-                    <img src="resources/images/documentation/Inspector - DefaultVehicleDriveInputs.png"/>
+                    <p><b><b>Inputs</b></b> is a component of type <i>VehicleDriveInputs</i>. In the same way as for the character controllers, this component allows you to specifically manage the inputs. By default the vehicles use the component <i>VehicleDriveInputs</i>.</p>
+                    <img src="resources/images/documentation/Inspector - VehicleDriveInputs.png"/>
                     <p>As for the controller you can use it as an example to write your own inputs system.</p>
                     </br>
                     <p>The wheels also have components associated with them.</p>
